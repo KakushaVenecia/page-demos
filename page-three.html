@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <title>Kahũa Demo</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .nav-wrapper{
+        background-color: #171717;
+    }
+    svg {
+        font-family: "Aboreto", sans-serif;
+        width: 100%; 
+        height: 100%;
+    }
+    svg text {
+        animation: stroke 15s infinite alternate;
+        stroke-width: 2;
+        stroke: #e2b465;
+        font-size: 100px;
+    }
+    @keyframes stroke {
+        0%   {
+            fill:#e2b465; 
+            stroke: #fff;
+            stroke-dashoffset: 25%; 
+            stroke-dasharray: 0 50%; 
+            stroke-width: 2;
+        }
+        70%  {
+            fill:#e2b465; 
+            stroke: #fff;
+        }
+        80%  {
+            fill:#e2b465; 
+            stroke: #fff;
+            stroke-width: 3; 
+        }
+        100% {
+            fill: rgba(226,180,101,1); 
+            stroke: rgba(255, 255, 255, 0);
+            stroke-dashoffset: -25%; 
+            stroke-dasharray: 50% 0; 
+            stroke-width: 0;
+        }
+    }
+    .hero-background {
+        background-image: url('img/bean-file.avif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: moveBackground 20s linear infinite alternate;
+        width: 100%;
+        height: 400px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+    @keyframes moveBackground {
+        0%   { background-position: center 0%; }
+        100% { background-position: center 100%; }
+    }
+    .about-kahua {
+    font-size: 18px; /* Adjust the font size */
+    line-height: 1.6; /* Adjust the line height for better readability */
+    color: #333; /* Change the text color if needed */
+    margin-bottom: 20px; /* Add some space below the paragraph */
+}
+
+.about-kahua strong {
+    font-weight: bold; /* Make the strong text bold */
+}
+
+.about-kahua em {
+    font-style: italic; /* Make the emphasized text italic */
+}
+
+
+    .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%; /* Ensures the product div takes the full height of its container */
+}
+
+.product-info {
+    margin-top: 10px; /* Add some space between the image and the product info */
+}
+
+    .shop-button {
+        margin-top: 20px;
+    }
+
+    .how-to-prepare {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.how-to-prepare .col {
+    flex: 1 0 30%;
+    display: flex;
+}
+
+.how-to-prepare .step {
+    background-color: #e2b465;
+    color: #171717;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.how-to-prepare .step img {
+    width: 10%;
+    max-height: 10%;
+    margin: auto;
+}
+
+.how-to-prepare .step h4 {
+    margin-bottom: 10px;
+}
+
+
+
+    footer {
+        /* position: fixed; */
+        bottom: 0;
+        width: 100%;
+        background-color: #171717;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    
+</style>
+<body>
+    <!-- Navbar -->
+    <nav class="nav-wrapper">
+        <div class="container">
+          <a href="/index.html" class="brand-logo">Kahua</a>
+          <a href="#" class="sidenav-trigger" data-target="mobile-links">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Demo Page 1</a></li>
+            <li><a href="#">Demo Page 2</a></li>
+            <li><a href="#">Demo Page 3</a></li>
+            <li><a href="#">Demo Page 4</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-links">
+        <li><a href="#">Demo Page 1</a></li>
+        <li><a href="#">Demo Page 2</a></li>
+        <li><a href="#">Demo Page 3</a></li>
+        <li><a href="#">Demo Page 4</a></li>
+      </ul>
+    
+    <!-- Hero Section -->
+    <div class="hero-background">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="wrapper">
+                        <svg>
+                            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                                Kahũa
+                            </text>
+                        </svg>
+                    </div>
+                    <p class="center-align white-text">Discover the finest coffee beans from around the world.</p>
+                    <a  href="#" class="btn-large shop-button">SHOP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <h2 class="center-align">About Kahũa</h2>
+            <div class="container">
+                <div class="row">
+                     <div class="col s12">
+                        <p class="about-kahua">"Kahũa" is a premium coffee brand hailing from the lush green hills of Thika, Kenya. Renowned for its exceptional coffee beans, nurtured in rich volcanic soil and bathed in abundant sunshine. Kahũa prides itself on selecting only the finest beans and employing traditional roasting techniques to craft a bold and flavorful cup of coffee. Indulge in the smooth taste and rich aroma with each sip, experiencing a true celebration of coffee-making heritage.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   
+    <div class="container">
+        <div class="row center-align">
+            <div class="col s6">
+                <div class="product">
+                    <img src="img/coffee.png" alt="Product 1">
+                    <div class="product-info">
+                        <h5>Product 1</h5>
+                        <p>Description of Product 1</p>
+                        <a href="#" class="btn-small orange accent-1 black-text">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="product">
+                    <img src="img/coffee.png" alt="Product 2">
+                    <div class="product-info">
+                        <h5>Product 2</h5>
+                        <p>Description of Product 2</p>
+                        <a href="#" class="btn-small orange accent-1 black-text">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>   
+</div>
+<h2 class="center-align">How to Prepare</h2>
+<div class="row how-to-prepare black-text">
+    <div class="col s4 center-align">
+        <div class="step">
+            <h4>Step 1</h4>
+            <img src="img/spoon.png" alt="" srcset="">
+            <p class="white-text">Measure a tablespoon of coffee for each cup of coffee</p>
+        </div>
+    </div>
+    <div class="col s4 center-align">
+        <div class="step">
+            <h4>Step 2</h4>
+            <img src="img/jug.png" alt="" srcset="">
+            <p class="white-text">Wet the coffee with little water, pour the rest of the remaining water over a 30-second duration</p>
+        </div>
+    </div>
+    <div class="col s4 center-align">
+        <div class="step">
+            <h4>Step 3</h4>
+            <img src="img/cup.png" alt="" srcset="">
+            <p class="white-text">Sieve & enjoy your great cup of Kahũa coffee.</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Toggle Section for Additional Information -->
+    <footer id="additional-info">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h3 class="center-align">Contact Us</h3>
+                    <p class="center-align">For inquiries or assistance, please contact us at:</p>
+                    <ul class="center-align">
+                        <li>Email: info@kahua.com</li>
+                        <li>Phone: 123-456-7890</li>
+                        <li>Address: 123 Coffee Street, Cityville</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Materialize JavaScript -->
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+$(document).ready(function(){
+        $('.carousel').carousel();
+      });
+    </script>
+   
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

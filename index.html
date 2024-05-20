@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <title>Kahũa Demo</title>
+  <style>
+    * {
+      background-color: #171717;
+      color: #fff;
+    }
+    a {
+      width: fit-content;
+      max-height: auto;
+    }
+    i{
+      background-color: transparent;
+    }
+    .carousel img {
+      width: 800px; /* Set the desired width for larger images */
+      height: auto; /* Automatically adjust height to maintain aspect ratio */
+    }
+    h2{
+      color: #e2b465;
+    }
+    .brand-logo span {
+    display: inline-block;
+  }
+  .btn{
+    background-color: #e2b465;
+    color: #000;
+  }
+  .page-footer {
+    padding-top: 20px;
+    color: #fff;
+    background-color: #171717!important;}
+    /* .logo{
+      height: 100px;
+      width:100px
+    } */
+  </style>
+</head>
+<body>
+<!-- navbar -->
+<header>
+  <nav class="nav-wrapper transparent">
+    <div class="container">
+      <a href="#" class="brand-logo">
+        <!-- <img class="logo" src="img/logo.png" alt=""> -->
+        <span class="white-text">Kahũa</span>
+      </a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down white-text">
+        <li><a href="page-one.html">Demo1</a></li>
+        <li><a href="page-two.html" >Demo2</a></li>
+        <li><a href="page-three.html">Demo3</a></li>
+        <li><a href="page-four.html">Demo3</a></li>
+      </ul>
+      <ul class="sidenav grey lighten-2 white-text" id="mobile-menu">
+        <li><a href="page-one.html" >Demo1</a></li>
+        <li><a href="page-two.html" >Demo2</a></li>
+        <li><a href="page-three.html">Demo3</a></li>
+      </ul>
+    </div>
+  </nav><br>
+</header>
+<section class="container section" id="photos">
+  <div class="row">
+    <div class="col s12 l6 offset-l1 ">
+      <h2>About Kahũa</h2>
+      <p class=" white-text">"Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
+      <p class="white-text">Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage</p>
+      <a href="#" class="btn orange accent-1">Shop Now</a>
+    </div>
+    <div class="col s12 l4 valign-wrapper" >
+      <img src="img/coffee.png" alt="" class="responsive-img materialboxed">
+    </div>
+</div>
+<div class="row">
+<h2 class="center-align">How to prepare</h2>
+  <div class="col s4 center-align">
+    <img  src="img/spoon.png" alt="" srcset="">
+    <!-- Promo Content 1 goes here -->
+    <p class="white-text">Measure a tablespoon of coffee for each cup of coffee</p>
+  </div>
+  <div class="col s4 center-align">
+   <img src="img/jug.png" alt="" srcset="">
+   <p class="white-text"> Wet the coffee with little water, pour the rest of the remaining water over a 30 - second duration</p>
+  </div>
+  <div class="col s4 center-align">
+    <!-- Promo Content 3 goes here -->
+    <img src="img/cup.png" alt="" srcset="">
+    <p class="white-text">Sieve & enjoy your great cup of Kahũa coffee.</p>
+  </div>
+</div>
+<!-- <div class="row">
+  
+  <div class="col s12 l4">
+    <img src="img/back.png" alt="" class="responsive-img materialboxed">
+  </div>
+</div> -->
+  <!-- <div class="row">
+    <div class="col s12 l4 right-align" >
+        <img src="img/back.png" alt="" class="responsive-img materialboxed">
+    </div>
+    <div class="col s12 l6 offset-l1">
+      <h2></h2> -->
+      <!-- <p class="white-text">
+    </div>
+  </div> --> 
+</section>
+<!-- contact form -->
+<section class="section container scrollspy" id="contact">
+  <div class="row">
+    <div class="col s12 l5">
+      <h2 class="white-text text-darken-4">Get in Touch</h2>
+      <p class="white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p class="white-text">Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+      <p class="white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p class="white-text">Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+    </div>
+    <div class="col s12 l5 offset-l2">
+      <form>
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <input type="email" id="email">
+          <label for="email">Your Email</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">message</i>
+          <textarea id="message" class="materialize-textarea" cols="20" rows="20"></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <!-- <div class="input-field">
+          <i class="material-icons prefix">date_range</i>
+          <input type="text" id="date" class="datepicker">
+          <label for="date">Choose a date you need me for...</label>
+        </div> -->
+        <div class="input-field">
+          <p class="white-text">Products required:</p>
+          <p>
+            <label>
+              <input type="checkbox">
+              <span>Coffee Beans</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox">
+              <span>Coffee</span>
+            </label>
+          </p>
+        </div>
+        <div class="input-field center">
+          <button class="btn orange accent-1">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<hr>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">About Kahũa</h5>
+      </div>
+      <div class="row">
+        <div class="col s12 m6 l3"><p>Link 1</p></div>
+        <div class="col s12 m6 l3"><p>Link 2</p></div>
+        <div class="col s12 m6 l3"><p>Link 3</p></div>
+        <div class="col s12 m6 l3"><p>Link 4</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+<!-- Compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function(){
+
+$('.sidenav').sidenav();
+      $('.materialboxed').materialbox();
+      $('.parallax').parallax();
+      $('.tabs').tabs();
+      $('.datepicker').datepicker({
+        disableWeekends: true,
+        yearRange: 1
+      });
+      $('.tooltipped').tooltip();
+      $('.scrollspy').scrollSpy();
+
+});
+</script>
+</body>
+</html>

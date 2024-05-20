@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Hurme', sans-serif;
+            background: #07101d;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Custom CSS */
+.glass-background {
+    background-color: rgba(255, 255, 255, 0.147); /* Adjust the opacity as needed */
+    padding: 10px; /* Adjust padding as needed */
+    border-radius: 10px; /* Adjust border radius as needed */
+    backdrop-filter: blur(10px); /* Add blur effect for glass-like background */
+}
+.slider .slides li .caption {
+    left: 25%; /* Move the caption to the center */
+    transform: translateX(-50%); /* Adjust to horizontally center the caption */
+    width: 50%; /* Adjust width as needed */
+}
+
+.hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            margin: 0;
+            color: #ff6f61;
+            font-size: 36px;
+        }
+
+        .hero p {
+            margin: 20px 0;
+            color: #555555;
+            font-size: 18px;
+        }
+        .content {
+            z-index: 2;
+            position: absolute;
+            background: red;
+            top: 100%;
+        }
+
+        /* Add other CSS styles here */
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+        <nav class="nav-wrapper transparent">
+          <div class="container">
+            <a href="#" class="brand-logo">
+              <!-- <img class="logo" src="img/logo.png" alt=""> -->
+              <span class="white-text">Kahũa</span>
+            </a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down white-text">
+              <li><a href="page-one.html">Demo1</a></li>
+              <li><a href="page-two.html" >Demo2</a></li>
+              <li><a href="page-three.html">Demo3</a></li>
+              <li><a href="page-four.html">Demo3</a></li>
+            </ul>
+            <ul class="sidenav grey lighten-2 white-text" id="mobile-menu">
+              <li><a href="page-one.html" >Demo1</a></li>
+              <li><a href="page-two.html" >Demo2</a></li>
+              <li><a href="page-three.html">Demo3</a></li>
+            </ul>
+          </div>
+        </nav><br>
+    <!-- Slider Section -->
+<div class="slider">
+    <ul class="slides">
+        <!-- Slide 1 -->
+        <li>
+            <img src="img/bean-file.avif">
+            <div class="caption glass-background center-align">
+                <h3>My Coffee</h3>
+                <p class="black-text">Coffee you will love</p>
+                <a href="#" class="btn waves-effect orange accent-1 black-text">Shop Now</a>
+            </div>
+        </li>
+        <!-- Slide 2 -->
+        <li>
+            <img src="img/bean-file.avif">
+            <div class="caption glass-background center-align">
+                <h3>Kahũa</h3>
+                <p class="black-text">Freshly Roasted Beans</p>
+                <a href="#" class="btn waves-effect orange accent-1 black-text">Shop</a>
+            </div>
+        </li>
+        <!-- Add more slides as needed -->
+    </ul>
+</div>
+
+    <!-- About Section -->
+    <div class="container">
+        <div class="section">
+            <h2 class="center-align">About <span>Kahũa</span></h2>
+            <hr>
+            <p class="center-align white-text">"Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
+            <p class="white-text">Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <div>
+                <h2 class="black-text"> Freshly Roasted Beans</h2>
+                <p>Discover the finest coffee beans from around the world.</p>
+                <a href="#" class="btn orange accent-1 black-text">Shop Now</a>
+            </div>
+            <img src="img/coffee.png" alt="Shop Image" class="shop-image">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer black">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Company Bio</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac nisi non eros suscipit scelerisque.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#">Our work</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">Our services</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">About us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.slider');
+            var instances = M.Slider.init(elems, {
+                indicators: false,
+                height: 450,
+                transition: 500,
+                interval: 6000
+            });
+        });
+    </script>
+</

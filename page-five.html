@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Beans Shop</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+    <style>
+        body {
+            margin: 0;
+            background-color: #171717;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .product {
+            margin-bottom: 20px;
+        }
+        .card-image{
+            background-color: #e2b465;
+
+        }
+
+        .centered-image {
+            display: block;
+            margin: 0 auto;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .centered-image {
+            display: block;
+            margin: 0 auto;
+        }
+   
+    </style>
+</head>
+<body>
+    <nav class="nav-wrapper transparent">
+        <div class="container">
+          <a href="#" class="brand-logo">
+            <!-- <img class="logo" src="img/logo.png" alt=""> -->
+            <span class="white-text">Kahũa</span>
+          </a>
+          <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down white-text">
+            <li><a href="page-one.html">Demo1</a></li>
+            <li><a href="page-two.html" >Demo2</a></li>
+            <li><a href="page-three.html">Demo3</a></li>
+            <li><a href="page-four.html">Demo3</a></li>
+          </ul>
+          <ul class="sidenav grey lighten-2 white-text" id="mobile-menu">
+            <li><a href="page-one.html" >Demo1</a></li>
+            <li><a href="page-two.html" >Demo2</a></li>
+            <li><a href="page-three.html">Demo3</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+    <div class="container">
+        <h2 class="center-align">Shop</h2>
+        <div class="row">
+          <div class="col s12 l6">
+            <div class="card">
+              <div class="card-image">
+                <img class="centered-image" style="width: 40%; height: 45%;" src="img/coffee.png" alt="Kahũa Coffee">
+                <!-- <a href="" class="halfway-fab btn-floating pink pulse">
+                  <i class="material-icons">add</i>
+                </a> -->
+              </div>
+              <div class="card-content">
+                <span class="card-title">Kahũa Dark Roast </span>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                  quis aliquam orci. Orci varius natoque penatibus et magnis dis
+                  parturient montes, nascetur ridiculus mus.
+                </p>
+              </div>
+              <div class="card-action">
+                <a href="#" class="btn waves-effect orange accent-1">
+                    <span class="black-text">Add to Cart</span>
+                    <i class="material-icons right black-text">add_shopping_cart
+                        </i>
+                  </a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 l6">
+            <div class="card">
+              <div style="padding-bottom: 1.10rem;" class="card-image">
+
+                <img class="centered-image" style="width: 80%; height: 66%;" src="img/back.png" alt="Kahũa Coffee">
+                <!-- <a href="" class="halfway-fab btn-floating pink pulse">
+                  <i class="material-icons">wish</i>
+                </a> -->
+              </div>
+              <div class="card-content">
+                <span class="card-title">Kahũa Light Roast</span>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                  quis aliquam orci. Orci varius natoque penatibus et magnis dis
+                  parturient montes, nascetur ridiculus mus.
+                </p>
+              </div>
+              <div class="card-action">
+                <a href="#" class="btn orange accent-1">
+                    <span class="black-text">Add to Cart</span>
+                    <i class="material-icons right black-text">add_shopping_cart
+                        </i>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    
+    <footer class="page-footer blue-grey darken-3">
+        <div class="container">
+            <p class="center-align">&copy; 2024 Coffee Beans Shop</p>
+        </div>
+    </footer>
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+    });
+</script>
+
+</body>
+</html>
