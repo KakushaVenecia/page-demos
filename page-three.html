@@ -103,7 +103,26 @@
 }
 
 .product-info {
-    margin-top: 10px; /* Add some space between the image and the product info */
+    margin-top: 5px; /* Add some space between the image and the product info */
+}
+
+.carousel {
+
+    width: 100%;
+    height: 400px;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 30%;
+    transform-origin: 0% 50%;
+    margin-top: 1rem;
+    padding-bottom: 1rem!important;
+}
+
+.carousel-item{
+    padding: 10px;
+    margin-bottom: 1rem;
 }
 
     .shop-button {
@@ -217,31 +236,24 @@
             
         </div>
     </div>
-   
-    <div class="container">
-        <div class="row center-align">
-            <div class="col s6">
-                <div class="product">
-                    <img src="img/coffee.png" alt="Product 1">
-                    <div class="product-info">
-                        <h5>Product 1</h5>
-                        <p>Description of Product 1</p>
-                        <a href="#" class="btn-small orange accent-1 black-text">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="product">
-                    <img src="img/coffee.png" alt="Product 2">
-                    <div class="product-info">
-                        <h5>Product 2</h5>
-                        <p>Description of Product 2</p>
-                        <a href="#" class="btn-small orange accent-1 black-text">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>   
-</div>
+    <div class="carousel-wrapper">
+        <div class="carousel" id="shuffled-carousel">
+            <a class="carousel-item" href="#one!">
+                <img src="https://source.unsplash.com/400x400/?coffee" alt="Product 1">
+                <p class="black-text">description of Product 1</p>
+                
+            </a>
+            <a class="carousel-item" href="#two!">
+                <img src="https://source.unsplash.com/400x400/?coffee" alt="Product 2">
+                <p class="black-text">description of Product 2</p>
+            </a>
+            <a class="carousel-item" href="#three!">
+                <img src="https://source.unsplash.com/400x400/?coffee" alt="Product 3">
+                <p class="black-text">description of Product 3</p>
+            </a>
+        </div>
+    </div>
+    
 <h2 class="center-align">How to Prepare</h2>
 <div class="row how-to-prepare black-text">
     <div class="col s4 center-align">
@@ -278,7 +290,7 @@
                     <ul class="center-align">
                         <li>Email: info@kahua.com</li>
                         <li>Phone: 123-456-7890</li>
-                        <li>Address: 123 Coffee Street, Cityville</li>
+                        <li>Address: Nairobi </li>
                     </ul>
                 </div>
             </div>
@@ -290,13 +302,36 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
 $(document).ready(function(){
-        $('.carousel').carousel();
-      });
+    // Shuffle carousel items
+    const carousel = document.getElementById('shuffled-carousel');
+    const items = carousel.querySelectorAll('.carousel-item');
+    const shuffledItems = Array.from(items).sort(() => Math.random() - 0.5);
+    carousel.innerHTML = '';
+    shuffledItems.forEach(item => carousel.appendChild(item));
+
+    // Initialize carousel
+    $('.carousel').carousel();
+});
     </script>
     <script>
         $(document).ready(function () {
           $(".sidenav").sidenav();
         });
+      </script>
+      <script>
+        const switchInput = document.querySelector('.switch input[type="checkbox"]');
+const card1 = document.getElementById('card1');
+const card2 = document.getElementById('card2');
+
+switchInput.addEventListener('change', function() {
+  if (this.checked) {
+    card1.style.display = 'block';
+    card2.style.display = 'none';
+  } else {
+    card1.style.display = 'none';
+    card2.style.display = 'block';
+  }
+});
       </script>
    
     <!-- Compiled and minified JavaScript -->
