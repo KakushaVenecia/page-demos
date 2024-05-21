@@ -1,331 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <title>Kahua Demo</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Beans Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
-      .box {
-        height: 200px;
-      }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+         /* Color palette */
+            :root {
+            --dark-brown: #7f4f24;
+            --light-brown: #ddb892;
+            --dark-grey: #3b2f2f;
+            --tan: #d4a373;
+            }
 
-      .row > div {
-        padding: 10px;
-        /* background: #ddd; */
-        border: 1px solid #fff;
-      }
-      .row {
-        margin: 40px auto;
-      }
+        .background-image {
+            background-image: url('img/bean-file.avif');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-      .col > div {
-        background: lightblue !important;
-        height: 120px;
-      }
-    .video-container{
-        color: #fff;
-        background-color:black;
-        padding-bottom: 37.25% !important;
-    }
+        .section {
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-  video {
-    width: 100%; /* Set video width to 50% of the viewport width */
-    max-width:100%; /* Ensure video does not exceed container width */
-    height:400px; /* Maintain aspect ratio */
-  }
-  
+        nav {
+            background-color: #7f4e241b; /* Adjust the opacity as needed */
+            backdrop-filter: blur(30px);
+        }
+
+        nav a {
+            color: var(--light-brown);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-wrapper ul {
+            flex: 1;
+            display: flex;
+            justify-content: space-evenly;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .brand-logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .brand-logo img {
+            max-height: 84px; /* Adjust the max-height as needed */
+        }
+
+        /* Product Showcase */
+        .product-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            flex: 0 1 calc(30% - 20px);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-card h3 {
+            margin-top: 10px;
+            color: var(--light-brown);
+        }
+
+        .product-card p {
+            color: var(--light-brown);
+            margin-bottom: 20px;
+        }
+
+        .product-card .btn {
+            background-color: var(--dark-brown);
+            color: var(--light-brown);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .product-card .btn:hover {
+            background-color: var(--tan);
+        }
+
+        /* Contact Us */
+        .contact-container {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .contact-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            width: 50%;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background-color: var(--light-brown);
+            color: var(--dark-brown);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--tan);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: var(--light-brown);
+            padding: 50px 0;
+            text-align: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .footer-icons img {
+            width: 40px;
+            margin: 0 10px;
+        }
     </style>
-  </head>
-  <body>
-    <nav class="nav-wrapper">
-      <div class="container">
-        <a href="/index.html"  class="brand-logo">Kahũa</a> 
-        <a href="#" class="sidenav-trigger" data-target="mobile-links">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="page-one.html">Demo1</a></li>
-        <li><a href="page-two.html" >Demo2</a></li>
-        <li><a href="page-three.html">Demo3</a></li>
-        <li><a href="page-four.html">Demo4</a></li>
-        <li><a href="page-five.html">Demo5</a></li>
-        </ul>
-      </div>
-    </nav>
-    <ul class="sidenav" id="mobile-links">
-      <li><a href="page-one.html">Demo1</a></li>
-        <li><a href="page-two.html" >Demo2</a></li>
-        <li><a href="page-three.html">Demo3</a></li>
-        <li><a href="page-four.html">Demo4</a></li>
-        <li><a href="page-five.html">Demo5</a></li>
-    </ul>
+</head>
+<body>
+    <div class="background-image">
+        <nav>
+            <div class="nav-wrapper container">
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons">menu</i>
+                </a>
+                <!-- <a href="/index.html" class="brand-logo">
+                    Kahũa  Replace img/logo.png with your actual logo image -->
+                <!-- </a> -->
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/index.html">Kahũa</a></li>
+                    <li><a href="page-one.html">Demo1</a></li>
+                    <li><a href="page-two.html">Demo2</a></li>
+                    <li><a href="page-three.html">Demo3</a></li>
+                    <li><a href="page-four.html">Demo4</a></li>
+                    <li><a href="page-five.html">Demo5</a></li>
+                </ul>
+               
+                <ul class="sidenav" id="mobile-menu">
+                    <li><a href="page-one.html">Demo1</a></li>
+                    <li><a href="page-two.html">Demo2</a></li>
+                    <li><a href="page-three.html">Demo3</a></li>
+                    <li><a href="page-four.html">Demo4</a></li>
+                    <li><a href="page-five.html">Demo5</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <section id="about" class="section">
+                <p> "Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
+                <p>Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
+                <a href="#" class="btn">Shop Now</a>
+            </section>
 
-    
-    <div class="video-container center-align">
-      <video autoplay loop>
-        <source src="img/Heading.mp4" type="video/mp4">
-      </video>
-      <a href="#" class="btn orange accent-1 center-align">
-        <span class="black-text">ADD TO CART</span>
-        <i class="material-icons right black-text">add</i>
-      </a>
-    </div>
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
-          <i class="large material-icons">mode_edit</i>
-        </a>
-        <ul>
-          <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-          <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
-      </div>
-     
-    <div class="container">
+            <section id="products" class="section">
+                <h2>Products Showcase</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/400x300/?coffee" alt="Dark Roast">
+                        <h3>Dark Roast</h3>
+                        <p>A bold, full-bodied roast with notes of dark chocolate and caramel.</p>
+                        <a href="#" class="btn orange accent-1 black-text">Buy Now</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/400x300/?coffee" alt="Medium Roast">
+                        <h3>Medium Roast</h3>
+                        <p>A balanced roast with a smooth, nutty flavor and a hint of sweetness.</p>
+                        <a href="#" class="btn orange accent-1 black-text">Buy Now</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/400x300/?coffee" alt="Light Roast">
+                        <h3>Light Roast</h3>
+                        <p>A bright, vibrant roast with a delicate body and fruity notes.</p>
+                        <a href="#" class="btn orange accent-1 black-text">Buy Now</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                
+                <div class="contact-container">
+                    <form class="contact-form">
+                        <h2>Contact Us</h2>
+                        <input type="text" name="name" placeholder="Your Name">
+                        <input type="email" name="email" placeholder="Your Email">
+                        <textarea name="message" placeholder="Your Message"></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </div>
         
-      <h5 class="center-align">Center alignment</h5>
-      <h5 class="left-align">Left alignment</h5>
-      <h5 class="right-align">Right alignment</h5>
-    </div>
-
-    <div class="container grey darken-4 white-text box valign-wrapper">
-      <h5>Vertical alignment</h5>
-    </div>
-
-    <div class="container">
-      <p class="truncate">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec sem
-        dictum, consectetur ex vitae, feugiat quam. Sed quis sodales urna. Donec
-        tincidunt faucibus diam a ullamcorper.
-      </p>
-    </div>
-
-    <div class="container">
-      <h4>Buttons</h4>
-      <a href="#" class="btn lighten-3 waves-effect waves-dark black-text"
-        >Normal button</a
-      >
-      <a href="#" class="btn-small">Small button</a>
-      <a href="#" class="btn-large">Large button</a>
-      <a href="#" class="btn indigo waves-effect waves-light">Indigo button</a>
-      <a href="#" class="btn disabled">Disabled button</a>
-      <h4>Floating button</h4>
-      <a href="#" class="btn-floating pulse orange lighten-3"></a>
-      <h4>Other elements</h4>
-      <div class="btn">I am a div tag</div>
-    </div>
-    <div class="container">
-      <h4>Icons</h4>
-      <i class="material-icons red-text">error</i>
-      <i class="material-icons yellow-text text-darken-2">warning</i>
-      <i class="material-icons grey-text">cloud</i>
-      <i class="material-icons light-blue-text">folder</i>
-      <h4>Icons on Buttons</h4>
-      <a href="#" class="btn indigo">
-        <span>Send</span>
-        <i class="material-icons right">send</i>
-      </a>
-      <a href="#" class="btn pink waves-effect waves-light">
-        <span>Email</span>
-        <i class="material-icons left">email</i>
-      </a>
-      <h4>Icons on Floating Buttons</h4>
-      <a href="#" class="btn-floating light-blue">
-        <i class="material-icons">add</i>
-      </a>
-      <a href="#" class="btn-floating red pulse">
-        <i class="material-icons">remove</i>
-      </a>
-      <a href="#" class="btn-floating orange pulse">
-        <i class="material-icons">edit</i>
-      </a>
-    </div>
-
-    <div class="container">
-      <h4>Grids</h4>
-      <div class="row">
-        <div class="col s3">content</div>
-        <div class="col s3">content</div>
-        <div class="col s3">content</div>
-        <div class="col s3">content</div>
-      </div>
-      <div class="row">
-        <div class="col s6 m3">content</div>
-        <div class="col s6 m3">content</div>
-        <div class="col s6 m3">content</div>
-        <div class="col s6 m3">content</div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-      </div>
-      <div class="row">
-        <div class="col s12 m8">content</div>
-        <div class="col s12 m4">content</div>
-        <div class="col s12 m4">content</div>
-        <div class="col s12 m8">content</div>
-      </div>
-    </div>
-    <div class="container">
-      <h2>Modals</h2>
-      <a class="btn orange modal-trigger" href="#terms">Terms & Conditions</a>
-      <div id="terms" class="modal">
-        <div class="modal-content">
-          <h4>Terms & Conditions</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae finibus mi, egestas dignissim metus. Fusce tempus elementum metus. Donec eu nibh fringilla, dignissim arcu eu, ultrices ante. Cras consectetur risus id mi condimentum aliquam.</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close btn orange">Agree</a>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <h4>Shadows & Depth</h4>
-      <div class="row">
-        <div class="col s2">
-          <div></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-1"></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-2"></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-3"></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-4"></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-5"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <h2>Collections</h2>
-      <ul class="collection with-header">
-        <li class="collection-header"><h4>Customers</h4></li>
-        <li class="collection-item avatar">
-          <i class="material-icons circle blue">person</i>
-          <span class="title">Ryu</span>
-          <p class="grey-text">black-belt</p>
-          <a href="" class="secondary-content">
-            <i class="material-icons light-blue-text">email</i>
-          </a>
-        </li>
-        <li class="collection-item avatar">
-          <i class="material-icons circle blue">person</i>
-          <span class="title">Yoshi</span>
-          <p class="grey-text">orange-belt</p>
-          <a href="" class="secondary-content">
-            <i class="material-icons light-blue-text">email</i>
-          </a>
-        </li>
-        <li class="collection-item avatar">
-          <i class="material-icons circle blue">person</i>
-          <span class="title">Crystal</span>
-          <p class="grey-text">brown-belt</p>
-          <a href="" class="secondary-content">
-            <i class="material-icons light-blue-text">email</i>
-          </a>
-        </li>
-        <li class="collection-item">Mario</li>
-        <li class="collection-item">Luigi</li>
-        <li class="collection-item">Bowser</li>
-      </ul>
-    </div>
-    <div class="container">
-        <h2>Cards</h2>
-        <div class="row">
-          <div class="col s12 l6">
-            <div class="card">
-              <div class="card-image">
-                <img src="img/curry.jpg" alt="" />
-                <a href="" class="halfway-fab btn-floating pink pulse">
-                  <i class="material-icons">favorite</i>
-                </a>
+        <!-- <footer class="section">
+            <h2>Footer</h2>
+            <div class="col l6 s12">
+                <h5>About Kahũa</h5>
+                <p>Kahũa is a premium coffee brand that hails from the lush green hills of Thika, Kenya. We pride ourselves on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee.</p>
               </div>
-              <div class="card-content">
-                <span class="card-title">Mango & Chickpea Curry</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                  quis aliquam orci. Orci varius natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus.
-                </p>
-              </div>
-              <div class="card-action">
-                <a href="">More details</a>
-                <a href="">View Ingredients</a>
+              <div class="col l4 offset-l2 s12">
+                <h5>Connect</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div class="col s12 l6">
-            <div class="card">
-              <div class="card-image">
-                <img src="img/pasta.jpg" alt="" />
-                <a href="" class="halfway-fab btn-floating pink pulse">
-                  <i class="material-icons">favorite</i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title">Rainbow Pasta Salad</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                  quis aliquam orci. Orci varius natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus.
-                </p>
-              </div>
-              <div class="card-action">
-                <a href="">More details</a>
-                <a href="">View Ingredients</a>
+            <div class="footer-icons">
+                <img src="visa-icon.png" alt="Visa Icon">
+                Add more payment icons here
+            </div>
+         </footer> -->
+         <footer class="section">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <img src="img/logo.png" alt="" srcset="">
+                  <p>Perfectly Roasted Coffee</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5>Connect</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="footer-copyright grey darken-4">
+              <div class="container center-align">&copy; 2024 Kahũa Coffee</div>
+            </div>
+          </footer>
     </div>
-    
 
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-      $(document).ready(function () {
-        $(".sidenav").sidenav();
-        $('.fixed-action-btn').floatingActionButton();
-        $('.modal').modal();
-      });
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
     </script>
-    <script>
-      $(document).ready(function () {
-        $(".sidenav").sidenav();
-      });
-    </script>
-  </body>
+</body>
 </html>

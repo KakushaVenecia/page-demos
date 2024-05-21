@@ -1,467 +1,283 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  <title>Kahua Demo</title>
+  <title>Kahũa Coffee Roasters</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
   <style>
-    header{
-      background: url(img/bean-file.avif);
+     :root {
+      --dark-brown: #7f4f24;
+      --light-brown: #ddb892;
+      --dark-grey: #3b2f2f;
+      --tan: #d4a373;
+    }
+    /* header {
+      background: url('img/bean-file.avif') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      min-height: 500px;
-    }
-    @media screen and (max-width: 670px){
-      header{
-        min-height: 500px;
-      }
-    }
-    .section{
-      padding-top: 4vw;
-      padding-bottom: 4vw;
-    }
-    .tabs .indicator{
-      background-color: #e2b465;
-    }
-    .tabs .tab a:focus, .tabs .tab a:focus.active{
-      background: transparent;
-    }
-    
-
-.contact-info-area {
-    position: relative;
-    display: block;
-    background: #ffffff;
-}
-.contact-form {
-    position: relative;
-    display: block;
-    background: #ffffff;
-    padding: 10px 60px 80px;
-    -webkit-box-shadow: 0px 3px 8px 2px #ededed; 
-    box-shadow: 0px 3px 8px 2px #ededed;
-    z-index: 3;
-}
-.contact-form .sec-title-style1{
-    position: relative;
-    display: block;
-    padding-bottom: 51px;
-    width: 50%;
-}
-.contact-form .text-box{
-    position: relative;
-    display: block;
-    margin-top: 19px;
-    width: 50%;    
-}
-.contact-form .text p{
-    color: #848484;
-    line-height: 26px;
-    margin: 0;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    } */
+    header {
+      background-color: black;
+  position: relative;
+  width: 100%;
+  height: 350px; /* Adjust the height as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
 }
 
-.contact-form .inner-box{
-    position: relative;
-    display: block;
-    background: #ffffff;
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 50%;
+  min-height: 50%;
+  width: 50%;
+  height: auto;
+  z-index: 999;
+  transform: translateX(-50%) translateY(-50%);
 }
-.contact-form form{
-    position: relative;
-    display: block;
-}
-.contact-form form .input-box{
-    position: relative;
-    display: block;
-}
-
-.contact-form form input[type="text"],
-.contact-form form input[type="email"],
-.contact-form form textarea{
-    position: relative;
-    display: block;   
-    background: #ffffff;
-    border: 1px solid #eeeeee;
-    width: 100%;
-    height: 55px;
-    font-size: 16px;
-    padding-left: 19px;
-    padding-right: 15px;
-    border-radius: 0px;
-    margin-bottom: 20px;
-    transition: all 500ms ease;
-}
-.contact-form form textarea {
-    height: 130px;
-    padding-left: 19px;
-    padding-right: 15px;
-    padding-top: 14px;
-    padding-bottom: 15px;
-}
-.contact-form form input[type="text"]:focus{
-    color: #222222;
-    border-color: #d4d4d4; 
-}
-.contact-form form input[type="email"]:focus{
-    color: #222222;
-    border-color: #d4d4d4;
-}
-.contact-form form textarea:focus{
-    color: #222222;
-    border-color: #d4d4d4;
-}
-.contact-form form input[type="text"]::-webkit-input-placeholder {
-    color: #848484;
-}
-.contact-form form input[type="text"]:-moz-placeholder {
-    color: #848484;
-}
-.contact-form form input[type="text"]::-moz-placeholder {
-    color: #848484;
-}
-.contact-form form input[type="text"]:-ms-input-placeholder {
-    color: #848484;
-}
-.contact-form form input[type="email"]::-webkit-input-placeholder {
-    color: #848484;
-}
-.contact-form form input[type="email"]:-moz-placeholder {
-    color: #848484;
-}
-.contact-form form input[type="email"]::-moz-placeholder {
-    color: #848484;
-}
-.contact-form form input[type="email"]:-ms-input-placeholder {
-    color: #848484;
-}
-.contact-form form button {
-    position: relative;
-    display: block;
-    width: 100%;
-    background: #FFA500;
-    border: 1px solid #FFA500;
-    color: #131313;
-    font-size: 16px;
-    line-height: 55px;
-    font-weight: 600;
-    text-align: center;
-    text-transform: capitalize;
-    transition: all 200ms linear;
-    transition-delay: 0.1s;
-    cursor: pointer;
+    .nav-wrapper {
+      background-color:var(--tan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.contact-form form button:hover{
-    color: #ffffff;
-    background: #131313;
+.brand-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+.nav-wrapper ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1000;
+}
+
+
+    .brand-logo {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .product-card {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .contact-form {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0, 4px, 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-field input,
+    .input-field textarea {
+      border-bottom: 1px solid #9e9e9e;
+      box-shadow: none;
+    }
+
+    .btn {
+      background-color: var(--#ddb892);
+    }
+
+    .btn:hover {
+      background-color: var(--tan);
+    }
+
+    .parallax-container {
+      min-height: 380px;
+      line-height: 0;
+      height: auto;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .parallax-container .section {
+      width: 100%;
+    }
   </style>
-  
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper">
+      <!-- <a href="#" class="brand-logo center">Kahũa</a> -->
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/index.html">Kahũa</a></li>
+        <li><a href="page-one.html">Demo1</a></li>
+        <li><a href="page-two.html" >Demo2</a></li>
+        <li><a href="page-three.html">Demo3</a></li>
+        <li><a href="page-four.html">Demo4</a></li>
+        <li><a href="page-five.html">Demo5</a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+      <ul class="sidenav grey lighten-2 white-text" id="mobile-menu">
+        <li><a href="page-one.html">Demo1</a></li>
+        <li><a href="page-two.html" >Demo2</a></li>
+        <li><a href="page-three.html">Demo3</a></li>
+        <li><a href="page-four.html">Demo4</a></li>
+        <li><a href="page-five.html">Demo5</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- <header>
+    
+    <div class="container header-content">
+      <h1>Kahũa </h1>
+      <p>Experience the rich, bold flavors of our expertly roasted coffee beans.</p>
+    </div>
+  </header> -->
   <header>
-    <nav class="nav-wrapper transparent">
-      <div class="container">
-        <a href="/index.html"  class="brand-logo">Kahũa</a> 
-        <a href="#" class="sidenav-trigger" data-target="mobile-menu">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="page-one.html">Demo1</a></li>
-          <li><a href="page-two.html" >Demo2</a></li>
-          <li><a href="page-three.html">Demo3</a></li>
-          <li><a href="page-four.html">Demo4</a></li>
-          <li><a href="page-five.html">Demo5</a></li>
-          <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Instagram"> 
-            <i class="fab fa-instagram"></i>
-          </a></li>
-          <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a></li>
-          <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a></li>
-        </ul>
-        <ul class="sidenav grey lighten-2" id="mobile-menu">
-          <li><a href="page-one.html">Demo1</a></li>
-          <li><a href="page-two.html" >Demo2</a></li>
-          <li><a href="page-three.html">Demo3</a></li>
-          <li><a href="page-four.html">Demo4</a></li>
-          <li><a href="page-five.html">Demo5</a></li>
-        </ul>
-      </div>
-    </nav>
-    <h2></h2>
-    <div class="wrapper">
-        <svg>
-            <text x="10%" y="50%" dy=".35em" text-anchor="middle">
-                Kahũa
-            </text>
-        </svg>
+    <video autoplay loop muted>
+      <source src="img/Heading.mp4" type="video/mp4">
+    </video>
+    <div class="container header-content">
+      <h1>Kahũa</h1>
+      <p>Experience the rich, bold flavors of our expertly roasted coffee beans.</p>
     </div>
   </header>
-  <!-- photo / grid -->
-  <section class="container section scrollspy" id="photos">
+  <section class="section container">
     <div class="row">
-      <!-- <div class="col s12 l4">
-          <img src="img/coffee.png" alt="" class="responsive-img materialboxed">
-      </div> -->
-      <div class="col s12 l6 offset-l1">
-        <h2 class="indigo-text text-darken-4">About Kahũa</h2>
+      <div class="col s12 m6">
+        <h2>About Kahũa</h2>
         <p>"Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
+        <p>Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
+        <a href="#" class="btn orange accent-1">Shop Now</a>
+      </div>
+      <div class="col s12 m6">
+        <img src="img/back.png" alt="Coffee Beans" class="responsive-img">
       </div>
     </div>
-    <div class="row">
-      <div class="col s12 l4 offset-l1 push-l7">
-          <img src="img/back.png" alt="" class="responsive-img materialboxed">
-      </div>
-      <div class="col s12 l6 offset-l1 pull-l5 justify">
-        <!-- <h2 class="indigo-text text-darken-4">Cityscapes</h2> -->
-        <p class="black-text">Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage</p>
-        <a href="#" class="btn-large waves-effect orange accent-1">SHOP NOW</a>
-      </div>
-    </div>
-    <!-- <div class="row">
-      <div class="col s12 l4">
-          <img src="img/beans.jpg" alt="" class="responsive-img materialboxed">
-      </div>
-      <div class="col s12 l6 offset-l1">
-     <h2 class="indigo-text text-darken-4">Nature</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p> -->
-        
-      <!-- </div>
-    </div> --> 
   </section>
-<div>
-  <!-- parallax -->
-  <div class="parallax-container">
-    <div class="parallax">
-      <img src="img/beans.jpg" alt="" class="responsive-img">
-    </div>
-  </div>
 
-  <!-- contact form --> 
-<section class="contact-info-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                <div class="contact-form">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="center-align">
-                                <h3 class="black-text center-align">Send Your Message</h3>
-                                <div class="text center-align"><div class="decor-left"><span></span></div><p>Contact Form</p></div>
-                            </div>
-                        </div> 
-                    </div>   
-                    <div class="inner-box">
-                        <form id="contact-form" name="contact_form" class="default-form" action="" method="post">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-12">
-                                    <div class="row">
-                                        <div class="col-xl-6">
-                                            <div class="input-box">   
-                                                <input type="text" name="form_name" value="" placeholder="Name" required="">
-                                            </div> 
-                                             <div class="input-box"> 
-                                                <input type="text" name="form_phone" value="" placeholder="Phone">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <div class="input-box"> 
-                                                <input type="email" name="form_email" value="" placeholder="Email" required="">
-                                            </div>
-                                            <div class="input-box"> 
-                                                <input type="text" name="form_website" value="" placeholder="Website">
-                                            </div> 
-                                        </div>  
-                                    </div> 
-                                    <div class="row">
-                                         <div class="col-xl-12">
-                                            <div class="input-box"> 
-                                                <input type="text" name="form_subject" value="" placeholder="Subject">
-                                            </div>     
-                                        </div> 
-                                    </div>   
-                                </div>
-                                <div class="col-xl-6 col-lg-12">
-                                    <div class="input-box">    
-                                        <textarea name="form_message" placeholder="Your Message..." required=""></textarea>
-                                    </div>
-                                    <div class="button-box">
-                                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                                        <button type="submit" data-loading-text="Please wait...">Send Message<span class="flaticon-next"></span></button>    
-                                    </div>         
-                                </div> 
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            
+  <section class="section container">
+    <h2 class="center-align">Our Roasts</h2>
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="product-card">
+          <img src="https://source.unsplash.com/400x300/?coffee" alt="Coffee Roast">
+          <h3>Dark Roast</h3>
+          <p>A bold, full-bodied roast with notes of dark chocolate and caramel.</p>
+          <a href="#" class="btn orange accent-1 black-text">Buy Now</a>
         </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="product-card">
+          <img src="https://source.unsplash.com/400x300/?coffee" alt="Coffee Roast">
+          <h3>Medium</h3>
+          <p>A balanced roast with a smooth, nutty flavor and a hint of sweetness.</p>
+          <a href="#" class="btn orange accent-1 black-text">Buy Now</a>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="product-card">
+          <img src="https://source.unsplash.com/400x300/?coffee" alt="Coffee Roast">
+          <h3>Light Roast</h3>
+          <p>A bright, vibrant roast with a delicate body and fruity notes.</p>
+          <br>
+          <a href="#" class="btn orange accent-1 black-text">Buy Now</a>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+  <section class="section container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="contact-form">
+          <h3>Contact Us</h3>
+          <form>
+            <div class="input-field">
+              <input type="text" id="name" required>
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field">
+              <input type="email" id="email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+              <textarea id="message" class="materialize-textarea" required></textarea>
+              <label for="message">Message</label>
+            </div>
+            <button class="btn waves-effect waves-light orange accent-1 black-text" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- footer -->
   <footer class="page-footer grey darken-3">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5>About Me</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+          <h5>About Kahũa</h5>
+          <p>Kahũa is a premium coffee brand that hails from the lush green hills of Thika, Kenya. We pride ourselves on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee.</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5>Connect</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#">Facebook</a></li>
-            <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
-            <li><a class="grey-text text-lighten-3" href="#">Linked In</a></li>
-            <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+            <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright grey darken-4">
-        <div class="container center-align">&copy; 2024 </div>
+      <div class="container center-align">&copy; 2023 Kahũa Coffee Roasters</div>
     </div>
   </footer>
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
-    $(document).ready(function(){
-        $('.carousel').carousel();
+    $(document).ready(function() {
       $('.sidenav').sidenav();
-      $('.materialboxed').materialbox();
       $('.parallax').parallax();
-      $('.tabs').tabs();
-      $('.datepicker').datepicker({
-        disableWeekends: true,
-        yearRange: 1
-      });
       $('.tooltipped').tooltip();
-      $('.scrollspy').scrollSpy();
-
     });
-  </script>
-  <script>
-    // vars
-'use strict'
-var	testim = document.getElementById("testim"),
-		testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
-    testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
-    testimLeftArrow = document.getElementById("left-arrow"),
-    testimRightArrow = document.getElementById("right-arrow"),
-    testimSpeed = 4500,
-    currentSlide = 0,
-    currentActive = 0,
-    testimTimer,
-		touchStartPos,
-		touchEndPos,
-		touchPosDiff,
-		ignoreTouch = 30;
-;
-
-window.onload = function() {
-
-    // Testim Script
-    function playSlide(slide) {
-        for (var k = 0; k < testimDots.length; k++) {
-            testimContent[k].classList.remove("active");
-            testimContent[k].classList.remove("inactive");
-            testimDots[k].classList.remove("active");
-        }
-
-        if (slide < 0) {
-            slide = currentSlide = testimContent.length-1;
-        }
-
-        if (slide > testimContent.length - 1) {
-            slide = currentSlide = 0;
-        }
-
-        if (currentActive != currentSlide) {
-            testimContent[currentActive].classList.add("inactive");            
-        }
-        testimContent[slide].classList.add("active");
-        testimDots[slide].classList.add("active");
-
-        currentActive = currentSlide;
-    
-        clearTimeout(testimTimer);
-        testimTimer = setTimeout(function() {
-            playSlide(currentSlide += 1);
-        }, testimSpeed)
-    }
-
-    testimLeftArrow.addEventListener("click", function() {
-        playSlide(currentSlide -= 1);
-    })
-
-    testimRightArrow.addEventListener("click", function() {
-        playSlide(currentSlide += 1);
-    })    
-
-    for (var l = 0; l < testimDots.length; l++) {
-        testimDots[l].addEventListener("click", function() {
-            playSlide(currentSlide = testimDots.indexOf(this));
-        })
-    }
-
-    playSlide(currentSlide);
-
-    // keyboard shortcuts
-    document.addEventListener("keyup", function(e) {
-        switch (e.keyCode) {
-            case 37:
-                testimLeftArrow.click();
-                break;
-                
-            case 39:
-                testimRightArrow.click();
-                break;
-
-            case 39:
-                testimRightArrow.click();
-                break;
-
-            default:
-                break;
-        }
-    })
-		
-		testim.addEventListener("touchstart", function(e) {
-				touchStartPos = e.changedTouches[0].clientX;
-		})
-	
-		testim.addEventListener("touchend", function(e) {
-				touchEndPos = e.changedTouches[0].clientX;
-			
-				touchPosDiff = touchStartPos - touchEndPos;
-			
-				console.log(touchPosDiff);
-				console.log(touchStartPos);	
-				console.log(touchEndPos);	
-
-			
-				if (touchPosDiff > 0 + ignoreTouch) {
-						testimLeftArrow.click();
-				} else if (touchPosDiff < 0 - ignoreTouch) {
-						testimRightArrow.click();
-				} else {
-					return;
-				}
-			
-		})
-}
   </script>
 </body>
 </html>

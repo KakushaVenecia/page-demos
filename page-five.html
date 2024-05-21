@@ -1,227 +1,279 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Beans Shop</title>
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-                body, html {
-            margin: 0;
-            height: 100%;
-            background: linear-gradient(-45deg, #7f4f24, #ddb892, #3b2f2f, #d4a373);
-            background-size: 600% 600%; /* Increased size for smoother transition */
-            animation: gradientBG 15s ease infinite;
-            display: flex;
-            flex-direction: column;
-            color: #3b2f2f; /* Use dark brown for text color */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!-- Google Icon Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <title>Kahũa Demo</title>
+  <style>
+    :root {
+      --dark-brown: #7f4f24;
+      --light-brown: #ddb892;
+      --dark-grey: #3b2f2f;
+      --tan: #d4a373;
+    }
+    body {
+      color: var(--dark-grey);
+      margin: auto;
+    }
+    .nav-wrapper {
+      background: linear-gradient(-45deg, var(--dark-brown), var(--light-brown));
+    }
+    .nav-wrapper a, .sidenav a {
+      color: var(--dark-grey);
+    }
 
-
-        @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-
-
-        .content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .nav-wrapper{
-            background: linear-gradient(-45deg, #7f4f24, #ddb892, #3b2f2f, #d4a373);
-        }
-        /* .container {
-            padding: 20px;
-        } */
-        .product {
-            margin-bottom: 20px;
-        }
-        .card-image {
-            background-color: #e2b465;
-        }
-        .centered-image {
-            display: block;
-            margin: 0 auto;
-        }
-        .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-        .wrapper {
-        text-align: center;
-        width: 100%;
-        max-width: 550px;
-        background: rgba(0,0,0,0.5); /* Semi-transparent background */
-        padding: 30px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
-        .wrapper .title h1 {
-            color: #c5ecfd;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .input-field input[type=text],
-        .input-field textarea {
-            color: #c5ecfd;
-            border-bottom: 1px solid #c5ecfd;
-        }
-        .input-field input[type=text]::placeholder,
-        .input-field textarea::placeholder {
-            color: #c5ecfd;
-        }
-        .btn-custom {
-            background: #39b7dd;
-            text-align: center;
-            padding: 15px;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-            text-transform: uppercase;
-            width: 100%;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            /* padding: 10px 0; */
-        }
-    </style>
+    p{
+      color: var(--dark-grey);
+    }
+    .sidenav {
+      background-color: var(--light-brown);
+    }
+    .carousel img {
+      width: 100%;
+      height: auto;
+    }
+    h2 {
+      color: var(--tan);
+    }
+    .btn {
+      background-color: var(--tan);
+      color: var(--dark-grey);
+    }
+    .btn:hover {
+      background-color: var(--light-brown);
+    }
+    .site-footer__payment-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .payment-icons {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .payment-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    .payment-icon svg {
+      width: 38px;
+      height: 24px;
+    }
+    .page-footer {
+      padding-top: 20px;
+      color: #fff;
+      background-color: var(--dark-brown) !important;
+    }
+    .footer-links a {
+      color: var(--light-brown);
+    }
+    .footer-links a:hover {
+      color: var(--tan);
+    }
+    .about-kahua {
+      background: url('img/coffee-background.jpg') no-repeat center center/cover;
+      padding: 50px 20px;
+      color: white;
+    }
+    .about-kahua h2 {
+      font-size: 2.5rem;
+    }
+    .about-kahua p {
+      font-size: 1.2rem;
+    }
+    .how-to-prepare .card {
+      transition: transform 0.3s ease-in-out;
+    }
+    .how-to-prepare .card:hover {
+      transform: scale(1.05);
+    }
+    .card-image {
+      background-color: var(--light-brown);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+    }
+    .card-image img {
+      max-height: 30%;
+      max-width: 30%;
+    }
+  </style>
 </head>
 <body>
-    <nav class="nav-wrapper">
-        <div class="container">
-            <a href="/index.html" class="brand-logo">Kahũa</a>
-            <a href="#" class="sidenav-trigger" data-target="mobile-menu">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul class="right hide-on-med-and-down white-text">
-                <li><a href="page-one.html">Demo1</a></li>
-                <li><a href="page-two.html">Demo2</a></li>
-                <li><a href="page-three.html">Demo3</a></li>
-                <li><a href="page-four.html">Demo4</a></li>
-                <li><a href="page-five.html">Demo5</a></li>
-            </ul>
-            <ul class="sidenav grey lighten-2 white-text" id="mobile-menu">
-                <li><a href="page-one.html">Demo1</a></li>
-                <li><a href="page-two.html">Demo2</a></li>
-                <li><a href="page-three.html">Demo3</a></li>
-                <li><a href="page-four.html">Demo4</a></li>
-                <li><a href="page-five.html">Demo5</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="content">
-        <div class="container">
-            <h2 class="center-align">Shop</h2>
-            <div class="row">
-                <div class="col s12 l6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img class="centered-image" style="width: 40%; height: 45%;" src="img/coffee.png" alt="Kahũa Coffee">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Kahũa Dark Roast </span>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                                quis aliquam orci. Orci varius natoque penatibus et magnis dis
-                                parturient montes, nascetur ridiculus mus.
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="btn waves-effect orange accent-1">
-                                <span class="black-text">Add to Cart</span>
-                                <i class="material-icons right black-text">add_shopping_cart</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 l6">
-                    <div class="card">
-                        <div style="padding-bottom: 1.10rem;" class="card-image">
-                            <img class="centered-image" style="width: 80%; height: 66%;" src="img/back.png" alt="Kahũa Coffee">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Kahũa Light Roast</span>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                                quis aliquam orci. Orci varius natoque penatibus et magnis dis
-                                parturient montes, nascetur ridiculus mus.
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="btn orange accent-1">
-                                <span class="black-text">Add to Cart</span>
-                                <i class="material-icons right black-text">add_shopping_cart</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper center-align">
-            <div class="title">
-                <h1>Contact Us Form</h1>
-            </div>
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="name" type="text" class="validate" placeholder="Name">
-                        </div>
-                        <div class="input-field col s12">
-                            <input id="email" type="text" class="validate" placeholder="Email Address">
-                        </div>
-                        <div class="input-field col s12">
-                            <input id="phone" type="text" class="validate" placeholder="Phone">
-                        </div>
-                        <div class="input-field col s12">
-                            <input id="subject" type="text" class="validate" placeholder="Subject">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="message" class="materialize-textarea" placeholder="Message"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <a class="btn-custom">Send</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+<header>
+  <nav class="nav-wrapper transparent">
+    <div class="container">
+      <a href="/index.html" class="brand-logo">Kahũa</a> 
+      <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="page-one.html">Demo1</a></li>
+        <li><a href="page-two.html">Demo2</a></li>
+        <li><a href="page-three.html">Demo3</a></li>
+        <li><a href="page-four.html">Demo4</a></li>
+        <li><a href="page-five.html">Demo5</a></li>
+      </ul>
+      <ul class="sidenav" id="mobile-menu">
+        <li><a href="page-one.html">Demo1</a></li>
+        <li><a href="page-two.html">Demo2</a></li>
+        <li><a href="page-three.html">Demo3</a></li>
+        <li><a href="page-four.html">Demo4</a></li>
+        <li><a href="page-five.html">Demo5</a></li>
+      </ul>
     </div>
-    <footer class="page-footer blue-grey darken-3">
-        <div class="container">
-            <p class="center-align">&copy; 2024 Coffee Beans Shop</p>
+  </nav>
+  <br>
+</header>
+<section class="about-kahua">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 l6 offset-l1">
+        <h2>About Kahũa</h2>
+        <p>"Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
+        <p>Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
+      <div class="col s12 l4 valign-wrapper">
+        <img src="img/coffee.png" alt="" class="responsive-img materialboxed">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container section how-to-prepare" id="how-to-prepare">
+  <h2 class="center-align">How to Prepare</h2>
+  <div class="row">
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="img/spoon.png" alt="Spoon">
         </div>
-    </footer>
-    <!-- Materialize JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems);
-        });
-    </script>
+        <div class="card-content center-align">
+          <p>Measure a tablespoon of coffee for each cup of coffee.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="img/jug.png" alt="Jug">
+        </div>
+        <div class="card-content center-align">
+          <p>Wet the coffee with a little water, pour the rest of the remaining water over a 30-second duration.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="img/cup.png" alt="Cup">
+        </div>
+        <div class="card-content center-align">
+          <p>Sieve & enjoy your great cup of Kahũa coffee.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section container scrollspy" id="contact">
+  <div class="row">
+    <div class="col s12 l5">
+      <h2>Get in Touch</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+    </div>
+    <div class="col s12 l5 offset-l2">
+      <form>
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <input type="email" id="email">
+          <label for="email">Your Email</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">message</i>
+          <textarea id="message" class="materialize-textarea"></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <div class="input-field">
+          <p>Products required:</p>
+          <p>
+            <label>
+              <input type="checkbox">
+              <span>Coffee Beans</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox">
+              <span>Coffee</span>
+            </label>
+          </p>
+        </div>
+        <div class="input-field center">
+          <button class="btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<hr>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">About Us</h5>
+        <p class="grey-text text-lighten-4">We are passionate about coffee and strive to bring you the finest quality beans, sourced directly from farmers.</p>
+      </div>
+      <div class="col l4 offset-l2 s12 footer-links">
+        <h5 class="white-text">Connect</h5>
+        <ul>
+          <li><a href="#!">Contact</a></li>
+          <li><a href="#!">Support</a></li>
+          <li><a href="#!">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      &copy; 2024 Kahũa Coffee
+      <ul class="right site-footer__payment-icons">
+        <li class="payment-icon">
+          <svg width="38" height="24" aria-hidden="true" role="img">
+            <use xlink:href="#visa" />
+          </svg>
+        </li>
+        <li class="payment-icon">
+          <svg width="38" height="24" aria-hidden="true" role="img">
+            <use xlink:href="#master" />
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+    var elemsBox = document.querySelectorAll('.materialboxed');
+    var instancesBox = M.Materialbox.init(elemsBox);
+  });
+</script>
 </body>
 </html>
