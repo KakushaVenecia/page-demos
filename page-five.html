@@ -6,14 +6,34 @@
     <title>Coffee Beans Shop</title>
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        body {
+                body, html {
             margin: 0;
-            background-color: #171717;
+            height: 100%;
+            background: linear-gradient(-45deg, #7f4f24, #ddb892, #3b2f2f, #d4a373);
+            background-size: 600% 600%; /* Increased size for smoother transition */
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            flex-direction: column;
+            color: #3b2f2f; /* Use dark brown for text color */
+        }
+
+
+        @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
         header {
             background-color: #333;
@@ -21,17 +41,19 @@
             padding: 20px;
             text-align: center;
         }
-        .container {
-            padding: 20px;
+
+        .nav-wrapper{
+            background: linear-gradient(-45deg, #7f4f24, #ddb892, #3b2f2f, #d4a373);
         }
+        /* .container {
+            padding: 20px;
+        } */
         .product {
             margin-bottom: 20px;
         }
-        .card-image{
+        .card-image {
             background-color: #e2b465;
-
         }
-
         .centered-image {
             display: block;
             margin: 0 auto;
@@ -42,99 +64,152 @@
             justify-content: space-between;
             height: 100%;
         }
-        .centered-image {
-            display: block;
-            margin: 0 auto;
+        .wrapper {
+        text-align: center;
+        width: 100%;
+        max-width: 550px;
+        background: rgba(0,0,0,0.5); /* Semi-transparent background */
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
-   
+        .wrapper .title h1 {
+            color: #c5ecfd;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .input-field input[type=text],
+        .input-field textarea {
+            color: #c5ecfd;
+            border-bottom: 1px solid #c5ecfd;
+        }
+        .input-field input[type=text]::placeholder,
+        .input-field textarea::placeholder {
+            color: #c5ecfd;
+        }
+        .btn-custom {
+            background: #39b7dd;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 100%;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            /* padding: 10px 0; */
+        }
     </style>
 </head>
 <body>
-        <nav class="nav-wrapper black">
-            <div class="container">
-                <a href="/index.html"  class="brand-logo">Kahũa</a> 
-                <!-- <img class="logo" src="img/logo.png" alt=""> -->
-                <!-- <span class="white-text">Kahũa</span> -->
-              </a>
-              <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+    <nav class="nav-wrapper">
+        <div class="container">
+            <a href="/index.html" class="brand-logo">Kahũa</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-menu">
                 <i class="material-icons">menu</i>
-              </a>
-              <ul class="right hide-on-med-and-down white-text">
+            </a>
+            <ul class="right hide-on-med-and-down white-text">
                 <li><a href="page-one.html">Demo1</a></li>
-            <li><a href="page-two.html" >Demo2</a></li>
-            <li><a href="page-three.html">Demo3</a></li>
-            <li><a href="page-four.html">Demo4</a></li>
-            <li><a href="page-five.html">Demo5</a></li>
-              </ul>
-              <ul class="sidenav grey lighten-2 white-text" id="mobile-menu">
+                <li><a href="page-two.html">Demo2</a></li>
+                <li><a href="page-three.html">Demo3</a></li>
+                <li><a href="page-four.html">Demo4</a></li>
+                <li><a href="page-five.html">Demo5</a></li>
+            </ul>
+            <ul class="sidenav grey lighten-2 white-text" id="mobile-menu">
                 <li><a href="page-one.html">Demo1</a></li>
-            <li><a href="page-two.html" >Demo2</a></li>
-            <li><a href="page-three.html">Demo3</a></li>
-            <li><a href="page-four.html">Demo4</a></li>
-            <li><a href="page-five.html">Demo5</a></li>
-              </ul>
-            </div>
-          </nav>
-          <br>
-    <div class="container">
-        <h2 class="center-align">Shop</h2>
-        <div class="row">
-          <div class="col s12 l6">
-            <div class="card">
-              <div class="card-image">
-                <img class="centered-image" style="width: 40%; height: 45%;" src="img/coffee.png" alt="Kahũa Coffee">
-                <!-- <a href="" class="halfway-fab btn-floating pink pulse">
-                  <i class="material-icons">add</i>
-                </a> -->
-              </div>
-              <div class="card-content">
-                <span class="card-title">Kahũa Dark Roast </span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                  quis aliquam orci. Orci varius natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus.
-                </p>
-              </div>
-              <div class="card-action">
-                <a href="#" class="btn waves-effect orange accent-1">
-                    <span class="black-text">Add to Cart</span>
-                    <i class="material-icons right black-text">add_shopping_cart
-                        </i>
-                  </a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 l6">
-            <div class="card">
-              <div style="padding-bottom: 1.10rem;" class="card-image">
-
-                <img class="centered-image" style="width: 80%; height: 66%;" src="img/back.png" alt="Kahũa Coffee">
-                <!-- <a href="" class="halfway-fab btn-floating pink pulse">
-                  <i class="material-icons">wish</i>
-                </a> -->
-              </div>
-              <div class="card-content">
-                <span class="card-title">Kahũa Light Roast</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                  quis aliquam orci. Orci varius natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus.
-                </p>
-              </div>
-              <div class="card-action">
-                <a href="#" class="btn orange accent-1">
-                    <span class="black-text">Add to Cart</span>
-                    <i class="material-icons right black-text">add_shopping_cart
-                        </i>
-                  </a>
-              </div>
-            </div>
-          </div>
+                <li><a href="page-two.html">Demo2</a></li>
+                <li><a href="page-three.html">Demo3</a></li>
+                <li><a href="page-four.html">Demo4</a></li>
+                <li><a href="page-five.html">Demo5</a></li>
+            </ul>
         </div>
-      </div>
+    </nav>
+    <div class="content">
+        <div class="container">
+            <h2 class="center-align">Shop</h2>
+            <div class="row">
+                <div class="col s12 l6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="centered-image" style="width: 40%; height: 45%;" src="img/coffee.png" alt="Kahũa Coffee">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Kahũa Dark Roast </span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                                quis aliquam orci. Orci varius natoque penatibus et magnis dis
+                                parturient montes, nascetur ridiculus mus.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="btn waves-effect orange accent-1">
+                                <span class="black-text">Add to Cart</span>
+                                <i class="material-icons right black-text">add_shopping_cart</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6">
+                    <div class="card">
+                        <div style="padding-bottom: 1.10rem;" class="card-image">
+                            <img class="centered-image" style="width: 80%; height: 66%;" src="img/back.png" alt="Kahũa Coffee">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Kahũa Light Roast</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                                quis aliquam orci. Orci varius natoque penatibus et magnis dis
+                                parturient montes, nascetur ridiculus mus.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="btn orange accent-1">
+                                <span class="black-text">Add to Cart</span>
+                                <i class="material-icons right black-text">add_shopping_cart</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper center-align">
+            <div class="title">
+                <h1>Contact Us Form</h1>
+            </div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate" placeholder="Name">
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="email" type="text" class="validate" placeholder="Email Address">
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="phone" type="text" class="validate" placeholder="Phone">
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="subject" type="text" class="validate" placeholder="Subject">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="message" class="materialize-textarea" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <a class="btn-custom">Send</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-   
-    
     <footer class="page-footer blue-grey darken-3">
         <div class="container">
             <p class="center-align">&copy; 2024 Coffee Beans Shop</p>
@@ -142,16 +217,11 @@
     </footer>
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems);
-    });
-</script> -->
-<script>
-    $(document).ready(function () {
-      $(".sidenav").sidenav();
-    });
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
 </body>
 </html>
