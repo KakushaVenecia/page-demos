@@ -17,7 +17,13 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        :root {
+            --dark-brown: #7f4f24;
+            --light-brown: #ddb892;
+            --dark-grey: #3b2f2f;
+            --tan: #d4a373;
+            --background-grey: #f8f4f0;
+        }
         .nav-wrapper {
             background-color: #171717;
         }
@@ -58,7 +64,7 @@
             }
         }
         .hero-background {
-            background-image: url('img/bean-file.avif');
+            background-image: url(img/bean-file.avif);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -109,64 +115,71 @@
             -webkit-transform-origin: 0% 30%;
             transform-origin: 0% 50%;
             margin-top: 1rem;
-            padding-bottom: 1rem !important;
+            padding-bottom: 1rem;
         }
         .carousel-item {
             padding: 10px;
-            margin-bottom: 1rem;
         }
         .shop-button {
             margin-top: 20px;
         }
-        .how-to-prepare {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        .how-to-prepare .col {
-            /* flex: 1 0 30%; */
-            display: flex;
-        }
-        .how-to-prepare .step {
-            background-color: #e2b465;
-            color: #171717;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
+        .tabs {
             text-align: center;
-        }
-        .how-to-prepare .step img {
-            width: 10%;
-            max-height: 20%;
-            margin: auto;
-        }
-        .how-to-prepare .step h4 {
             margin-bottom: 10px;
         }
-        @media (max-width: 768px) {
-            .how-to-prepare {
-                flex-direction: column;
-                align-items: center;
-            }
-            .how-to-prepare .col {
-                width: 100%;
-                max-width: 400px;
-                margin-bottom: 20px;
-            }
-            .how-to-prepare .step img {
-                width: 20%;
-                max-height: 20%;
-            }
+        .tabs .tab a:hover, .tabs .tab a.active {
+            background-color: transparent;
+            color: #7f4f24 !important;
+        }
+        .tabs .tab a {
+            color: #3b2f2f;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0 24px;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            transition: color .28s ease, background-color .28s ease;
+        }
+        .tabs .indicator {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background-color: #7f4f24 !important;
+            will-change: left, right;
+        }
+        .tab {
+            color: #d4a373;
+        }
+        #step1, #step2, #step3 {
+            text-align: center; 
+        }
+        .card {
+            margin: auto !important;
+            width: 70%;
+            background-color: #7f4f24;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        .card-image img {
+            max-height: 70%;
+            max-width: 100%;
+        }
+        .container {
+            margin-bottom: 1.3rem;
         }
         footer {
             bottom: 0;
             width: 100%;
-            background-color: #171717;
+            background-color: #000000;
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -177,7 +190,7 @@
     <!-- Navbar -->
     <nav class="nav-wrapper">
         <div class="container">
-            <a href="https://kakushavenecia.github.io/page-demos/index.html"  class="brand-logo">Kahũa</a> 
+            <a href="https://kakushavenecia.github.io/page-demos/index.html" class="brand-logo">Kahũa</a> 
             <a href="#" class="sidenav-trigger" data-target="mobile-links">
                 <i class="material-icons">menu</i>
             </a>
@@ -185,8 +198,9 @@
                 <li><a href="page-one.html">Page 1</a></li>
                 <li><a href="page-two.html">Page 2</a></li>
                 <li><a href="page-three.html">Page 3</a></li>
-                <li><a href="page-four.html">Page 4 </a></li>
+                <li><a href="page-four.html">Page 4</a></li>
                 <li><a href="page-five.html">Page 5</a></li>
+                <li><a href="page-six.html">Page 6</a></li>
             </ul>
         </div>
     </nav>
@@ -195,8 +209,9 @@
         <li><a href="page-one.html">Page 1</a></li>
         <li><a href="page-two.html">Page 2</a></li>
         <li><a href="page-three.html">Page 3</a></li>
-        <li><a href="page-four.html">Page 4 </a></li>
+        <li><a href="page-four.html">Page 4</a></li>
         <li><a href="page-five.html">Page 5</a></li>
+        <li><a href="page-six.html">Page 6</a></li>
     </ul>
     <!-- Hero Section -->
     <div class="hero-background">
@@ -229,46 +244,62 @@
         </div>
     </div>
     <div class="carousel-wrapper">
+        <h2 class="center-align">Browse our products</h2>
         <div class="carousel" id="shuffled-carousel">
             <a class="carousel-item" href="#one!">
-                <img src="https://source.unsplash.com/400x400/?coffee" alt="Product 1">
-                <p class="black-text">description of Product 1</p>
+                <img src="https://source.unsplash.com/400x500/?coffee" alt="Product 1">
+                <p class="black-text">Description of Product 1</p>
             </a>
             <a class="carousel-item" href="#two!">
-                <img src="https://source.unsplash.com/400x400/?coffee" alt="Product 2">
-                <p class="black-text">description of Product 2</p>
+                <img src="https://source.unsplash.com/400x500/?coffee" alt="Product 2">
+                <p class="black-text">Description of Product 2</p>
             </a>
             <a class="carousel-item" href="#three!">
-                <img src="https://source.unsplash.com/400x400/?coffee" alt="Product 3">
-                <p class="black-text">description of Product 3</p>
+                <img src="https://source.unsplash.com/400x500/?coffee" alt="Product 3">
+                <p class="black-text">Description of Product 3</p>
             </a>
         </div>
     </div>
-    <h2 class="center-align">How to Prepare</h2>
-    <div class="row how-to-prepare black-text">
-        <div class="col s4 center-align">
-            <div class="step">
-                <h4>Step 1</h4>
-                <img src="img/spoon.png" alt="" srcset="">
-                <p class="white-text">Measure a tablespoon of coffee for each cup of coffee</p>
+    <!-- Tabs for steps -->
+    <div class="container">
+        <h2 class="center-align">How to Prepare</h2>
+        <ul class="tabs">
+            <li class="tab"><a href="#step1">Step 1</a></li>
+            <li class="tab"><a href="#step2">Step 2</a></li>
+            <li class="tab"><a href="#step3">Step 3</a></li>
+        </ul>
+        <!-- Content for each step -->
+        <div id="step1">
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/spoon.png" alt="Spoon">
+                </div>
+                <div class="card-content">
+                    <p class="white-text">Measure a tablespoon of coffee for each cup of coffee</p>
+                </div>
             </div>
         </div>
-        <div class="col s4 center-align">
-            <div class="step">
-                <h4>Step 2</h4>
-                <img src="img/jug.png" alt="" srcset="">
-                <p class="white-text">Wet the coffee with little water, pour the rest of the remaining water over a 30-second duration</p>
+        <div id="step2">
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/jug.png" alt="Jug">
+                </div>
+                <div class="card-content">
+                    <p class="white-text">Wet the coffee with little water, pour the rest of the remaining water over a 30-second duration</p>
+                </div>
             </div>
         </div>
-        <div class="col s4 center-align">
-            <div class="step">
-                <h4>Step 3</h4>
-                <img src="img/cup.png" alt="" srcset="">
-                <p class="white-text">Sieve & enjoy your great cup of Kahũa coffee.</p>
+        <div id="step3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/cup.png" alt="Cup">
+                </div>
+                <div class="card-content">
+                    <p class="white-text">Sieve & enjoy your great cup of Kahũa coffee.</p>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Toggle Section for Additional Information -->
+    </div>  
     <footer id="additional-info">
         <div class="container">
             <div class="row">
@@ -278,7 +309,7 @@
                     <ul class="center-align">
                         <li>Email: info@kahua.com</li>
                         <li>Phone: 123-456-7890</li>
-                        <li>Address: Nairobi </li>
+                        <li>Address: Nairobi</li>
                     </ul>
                 </div>
             </div>
@@ -297,10 +328,9 @@
             // Initialize carousel
             $('.carousel').carousel();
         });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $(".sidenav").sidenav();
+        $(document).ready(function(){
+            $('ul.tabs').tabs();
+            $('.sidenav').sidenav();
         });
     </script>
     <script>

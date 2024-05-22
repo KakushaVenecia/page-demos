@@ -1,459 +1,339 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <title>Buy Coffee Grounds</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!-- Google Icon Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <title>Kahũa Demo</title>
   <style>
     :root {
-      --dark-brown: #3b2f2f;
-      --medium-brown: #7f4f24;
+      --dark-brown: #7f4f24;
       --light-brown: #ddb892;
+      --dark-grey: #3b2f2f;
       --tan: #d4a373;
-      --background-grey: #f8f4f0;
-      --accent-color: #c79c60;
-    }
-    *, html{
-        margin: 0!important;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: var(--background-grey);
-      color: var(--dark-brown);
+      background-color: #fffaf5;
+      color: #3b2f2f;
+      margin: auto;
     }
-    nav {
-      background-color: #ddb892; 
-      padding: 20px 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .row {
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-bottom: 20px; */
+    } 
+    .nav-wrapper {
+      background: linear-gradient(-45deg, var(--dark-brown), var(--light-brown));
     }
-    /* .nav-logo {
-      color:  #3b2f2f;
-      font-size: 24px;
-      font-weight: bold;
-      margin-left: 50px;
-      margin-top: 40px;
-      text-transform: uppercase;
-    } */
-    .nav-menu {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    .nav-wrapper a, .sidenav a {
+      color: var(--dark-grey);
     }
 
-    .nav-menu li {
-      display: inline-block;
-      margin-right: 20px;
+    p{
+      color: var(--dark-grey);
+      /* color: white; */
     }
-
-    .nav-menu li:last-child {
-      margin-right: 0;
-    }
-
-    .nav-menu li a {
-      color:   #3b2f2f;;
-      text-decoration: none;
-      transition: color 0.3s;
-      font-size: 18px;
-      position: relative;
-    }
-
-    .nav-menu li a::before {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: #fff;
-      transition: width 0.3s;
-    }
-
-    .nav-menu li a:hover::before {
-      width: 100%;
-    }
-
-    .nav-menu li a i {
-      margin-right: 5px;
-    }
-
-    .nav-menu li a span {
-      display: inline-block;
-      position: relative;
-      top: 4px;
-    }
-
-    /* Coffee Cup Animation */
-    .coffee-cup {
-      display: inline-block;
-      position: relative;
-      animation: coffee-float 4s infinite alternate;
-    }
-
-    @keyframes coffee-float {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-5px);
-      }
-    }
-    /* Header with Video */
-    .video-container {
-      position: relative;
-      height: 80vh;
-      overflow: hidden;
-    }
-
-    .video-container video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translateX(-50%) translateY(-50%);
-    }
-
-    .header-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: var(--background-grey);
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .header-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Main Content */
-    main {
-      padding: 1rem;
-    }
-
-    section {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 3rem;
-    }
-
-    @media (min-width: 768px) {
-    .col {
-        flex-basis: calc(50% - 1rem); /* Adjusted for the gap */
-    }
-    }
-
-    footer {
-    background-color: var(--dark-brown);
-    color: var(--background-grey);
-    padding: 2rem;
-    text-align: center;
-    margin-top: auto; /* Ensure footer sticks to the bottom */
-    margin-bottom: 0; /* Remove margin at the bottom */
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: var(--medium-brown);
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .coffee-variety {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      gap: 1rem;
-    }
-
-    .coffee-card {
+    .sidenav {
       background-color: var(--light-brown);
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.3s ease;
     }
-
-    .coffee-card:hover {
-      transform: translateY(-5px);
+    .carousel img {
+      width: 100%;
+      height: auto;
     }
-
-    .coffee-card img {
-      max-width: 40%;
-      height: 50%;
-      border-radius: 4px;
+    h2 {
+      color: var(--tan);
     }
-
-    .coffee-card h3 {
-      font-size: 1.5rem;
-      margin: 1rem 0;
-      color: var(--dark-brown);
-    }
-
-    .coffee-card p {
-      margin-bottom: 1rem;
-    }
-
     .btn {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background-color: var(--accent-color);
-      color: var(--background-grey);
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: var(--medium-brown);
-    }
-
-    /* Testimonials */
-    .testimonial {
       background-color: var(--tan);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
+      color: var(--dark-grey);
     }
-
-    .testimonial blockquote {
-      font-size: 1.2rem;
-      font-style: italic;
-      margin-bottom: 1rem;
+    .btn:hover {
+      background-color: var(--light-brown);
     }
-
-    .testimonial cite {
-      font-weight: bold;
-      color: var(--medium-brown);
+    .site-footer__payment-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
-    .footer-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .footer-content ul {
+    .payment-icons {
+      display: flex;
+      gap: 16px;
       list-style: none;
       padding: 0;
+      margin: 0;
+    }
+    .payment-icon {
+      flex-shrink: 0;
       display: flex;
-      justify-content: center;
-      gap: 1rem;
+      align-items: center;
     }
-
-    .footer-content a {
-      color: var(--background-grey);
-      text-decoration: none;
-      transition: color 0.3s ease;
+    .payment-icon svg {
+      width: 38px;
+      height: 24px;
     }
-
-    .footer-content a:hover {
-      color: var(--accent-color);
+    .page-footer {
+      padding-top: 20px;
+      color: #fff;
+      background-color: var(--dark-brown) !important;
     }
-
-    .footer-content form {
+    .footer-links a {
+      color: var(--light-brown);
+    }
+    .footer-links a:hover {
+      color: var(--tan);
+    }
+    .about-kahua {
+      padding: 50px 20px;
+      width: 100%;
+      color: white;
+      /* background-color: yellow; */
+    }
+    .about-kahua h2 {
+      font-size: 2.5rem;
+    }
+    .about-kahua p {
+      font-size: 1.2rem;
+    }
+    .how-to-prepare .card {
+      transition: transform 0.3s ease-in-out;
+    }
+    .how-to-prepare .card:hover {
+      transform: scale(1.05);
+    }
+    .card-image {
+      background-color: var(--light-brown);
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      height: 150px;
+    }
+    .card-image img {
+      max-height: 30%;
+      max-width: 30%;
     }
 
-    .footer-content input[type="email"] {
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: none;
-    }
-
-    section {
-        display: flex;
-        text-align: center;
-        margin-bottom: 3rem;
-        }
-
-h2 {
-  font-size: 2rem;
-  color: var(--medium-brown);
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.row {
+    .step {
   display: flex;
-  justify-content: space-around;
-  height: 60%;
-    width: 80%;
-    /* background-color: red; */
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.col {
-  flex-basis: 100%;
+.modal-content{
+  background-color: #7f4f24;
 }
 
-@media (min-width: 768px) {
-  .col {
-    flex-basis: 48%; /* Two columns layout on medium screens */
-  }
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 20px;
 }
 
-    .footer-content button[type="submit"] {
-      padding: 0.5rem 1rem;
-      background-color: var(--accent-color);
-      color: var(--background-grey);
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+.step-content {
+  display: flex;
+  align-items: center;
+}
+
+.step-content img {
+  max-width: 100px;
+  margin-right: 20px;
+  width: 20%;
+  height: 20%;
+}
+
+    .responsive-img{
+      width:150px;
+      height: 150px;
+
     }
 
-    .footer-content button[type="submit"]:hover {
-      background-color: var(--medium-brown);
-    }
+    
   </style>
 </head>
 <body>
-  <!-- Header with Video -->
-  <header>
-    <nav>
-        <!-- <div class="nav-logo">Kahũa</div> -->
-        <ul class="nav-menu">
-           <li> <a href="https://kakushavenecia.github.io/page-demos/index.html" class="brand-logo">Kahũa</a> </li>
-          <li><a href="page-one.html"><i class="fas fa-coffee"></i><span>Page 1</span></a></li>
-          <li><a href="page-two.html"><i class="fas fa-coffee"></i><span>Page 2</span></a></li>
-          <li><a href="page-three.html"><i class="fas fa-coffee"></i><span>Page 3</span></a></li>
-          <li><a href="page-four.html"><i class="fas fa-envelope"></i><span>Page 4</span></a></li>
-          <li><a href="page-five.html" class="coffee-cup"><i class="fas fa-coffee"></i><span>Page 5</span></a></li>
-        </ul>
-      </nav>
-    <div class="video-container">
-      <video autoplay loop muted>
-        <source src="img/Heading.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="header-content">
-      <h1>Freshly Roasted Coffee</h1>
-      <p>Experience the rich aroma and bold flavors of our premium coffee.</p>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-    <section class="section container">
-        <div class="row">
-          <div class="col s12 m6">
-            <br>
-            <h2>About Kahũa</h2>
-            <br>
-            <br>
-            <p class="justify">"Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
-            <br>
-            <p>Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
-            <br>
-            <a href="#" class="btn">Shop Now</a>
-          </div>
-          <div class="col s12 m6">
-            <img src="img/coffee.png" alt="Coffee Beans" class="responsive-img">
-          </div>
-        </div>
-      </section>
-      <h2>Our Coffee Varieties</h2>
-      <div class="coffee-variety">
-        <div class="coffee-card">
-          <img src="img/coffee.png" alt="Coffee Variety 1">
-          <h3>Light Roast</h3>
-          <p>A rich and full-bodied coffee with notes of caramel and chocolate.</p>
-          <a href="#" class="btn">Buy Now</a>
-        </div>
-        <div class="coffee-card">
-          <img src="img/coffee.png" alt="Coffee Variety 2">
-          <h3>Medium Roast</h3>
-          <p>A bright and vibrant coffee with a complex flavor profile.</p>
-          <a href="#" class="btn">Buy Now</a>
-        </div>
-        <div class="coffee-card">
-          <img src="img/coffee.png" alt="Coffee Variety 3">
-          <h3>Dark Roast</h3>
-          <p>A bold and earthy coffee with notes of dark chocolate and spice.</p>
-          <a href="#" class="btn">Buy Now</a>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Testimonials</h2>
-      <div class="testimonial">
-        <blockquote>
-          "These coffee grounds are simply amazing! The aroma and flavor are out of this world."
-          <cite>- John Doe</cite>
-        </blockquote>
-      </div>
-      <div class="testimonial">
-        <blockquote>
-          "I've tried many different coffee brands, but none compare to the quality and freshness of these grounds."
-          <cite>- Jane Smith</cite>
-        </blockquote>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <h3>Contact Us</h3>
-      <p>Email: info@coffeeshop.com</p>
-      <p>Phone: 123-456-7890</p>
-    </div>
-    <div class="footer-content">
-      <h3>Follow Us</h3>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Instagram</a></li>
+<header>
+  <nav class="nav-wrapper transparent">
+    <div class="container">
+      <a href="https://kakushavenecia.github.io/page-demos/index.html" class="brand-logo">Kahũa</a> 
+      <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <!-- <li><a href="/index.html">Kahũa</a></li> -->
+        <li><a href="page-one.html">Page 1</a></li>
+        <li><a href="page-two.html">Page 2</a></li>
+        <li><a href="page-three.html">Page 3</a></li>
+        <li><a href="page-four.html">Page 4 </a></li>
+        <li><a href="page-five.html">Page 5</a></li>
+        <li><a href="page-six.html">Page 6</a></li>
+      </ul>
+      <ul class="sidenav" id="mobile-menu">
+        <li><a href="/index.html">Kahũa</a></li>
+        <li><a href="page-one.html">Page 1</a></li>
+        <li><a href="page-two.html">Page 2</a></li>
+        <li><a href="page-three.html">Page 3</a></li>
+        <li><a href="page-four.html">Page 4 </a></li>
+        <li><a href="page-five.html">Page 5</a></li>
+        <li><a href="page-six.html">Page 6</a></li>
       </ul>
     </div>
-    <div class="footer-content">
-      <h3>Subscribe to Our Newsletter</h3>
+  </nav>
+  <br>
+</header>
+<section class="about-kahua">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 l6">
+        <h2>About Kahũa</h2>
+        <p>"Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
+        <p>Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
+        <br>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
+      <div class="col s12 l4 offset-l2 valign-wrapper">
+        <img src="img/coffee.png" alt="" class="responsive-img materialboxed">
+      </div>
+    </div>
+  </div>
+
+</section>
+<section class="container section how-to-prepare" id="how-to-prepare">
+  <h2 class="center-align">How to Prepare</h2>
+  <div class="row">
+    <div class="col s12 center-align">
+      <a class="btn modal-trigger" href="#modal-prepare">View Steps</a>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="modal-prepare" class="modal">
+  <div class="modal-content">
+    <h4>How to Prepare</h4>
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <p>Measure a tablespoon of coffee for each cup of coffee.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <p>Wet the coffee with a little water, pour the rest of the remaining water over a 30-second duration.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <p>Sieve & enjoy your great cup of Kahũa coffee.</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>
+<section class="section container scrollspy" id="contact">
+  <div class="row">
+    <div class="col s12 l5">
+      <h2>Get in Touch</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+    </div>
+    <div class="col s12 l5 offset-l2">
       <form>
-        <input type="email" placeholder="Enter your email">
-        <button type="submit">Subscribe</button>
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <input type="email" id="email">
+          <label for="email">Your Email</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">message</i>
+          <textarea id="message" class="materialize-textarea"></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <div class="input-field">
+          <p>Products required:</p>
+          <p>
+            <label>
+              <input type="checkbox">
+              <span>Coffee Beans</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox">
+              <span>Coffee</span>
+            </label>
+          </p>
+        </div>
+        <div class="input-field center">
+          <button class="btn">Submit</button>
+        </div>
       </form>
     </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    const testimonials = document.querySelectorAll('.testimonial');
-    let currentIndex = 0;
-
-    function showTestimonial() {
-      testimonials.forEach((testimonial, index) => {
-        if (index === currentIndex) {
-          testimonial.style.display = 'block';
-        } else {
-          testimonial.style.display = 'none';
-        }
-      });
-      currentIndex = (currentIndex + 1) % testimonials.length;
-    }
-
-    setInterval(showTestimonial, 5000);
-  </script>
+  </div>
+</section>
+<hr>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <img class="responsive-img" src="img/logo.png" alt="Awards">
+        <p class="grey-text text-lighten-4">We are passionate about coffee and strive to bring you the finest quality beans, sourced directly from farmers.</p>
+      </div>
+      <div class="col l4 offset-l2 s12 footer-links">
+        <h5 class="white-text">Connect</h5>
+        <ul>
+          <li><a href="#!">Contact</a></li>
+          <li><a href="#!">Support</a></li>
+          <li><a href="#!">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container center-align">
+      &copy; 2024 Kahũa Coffee
+      <ul class="right site-footer__payment-icons">
+        <li class="payment-icon">
+          <svg width="38" height="24" aria-hidden="true" role="img">
+            <use xlink:href="#visa" />
+          </svg>
+        </li>
+        <li class="payment-icon">
+          <svg width="38" height="24" aria-hidden="true" role="img">
+            <use xlink:href="#master" />
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+    var elemsBox = document.querySelectorAll('.materialboxed');
+    var instancesBox = M.Materialbox.init(elemsBox);
+    var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems);
+  });
+</script>
 </body>
 </html>
