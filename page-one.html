@@ -11,13 +11,14 @@
             padding: 0;
             height: 100%;
         }
-         /* Color palette */
-            :root {
+
+        /* Color palette */
+        :root {
             --dark-brown: #7f4f24;
             --light-brown: #ddb892;
             --dark-grey: #3b2f2f;
             --tan: #d4a373;
-            }
+        }
 
         .background-image {
             background-image: url('img/bean-file.avif');
@@ -62,21 +63,17 @@
             justify-content: center;
         }
 
-        .brand-logo img {
-            max-height: 84px; /* Adjust the max-height as needed */
-        }
-
         /* Product Showcase */
         .product-grid {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
             margin-top: 20px;
+            justify-content: space-evenly;
         }
 
         .product-card {
-            flex: 0 1 calc(30% - 20px);
+            flex: 1 1 calc(33% - 20px);
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
@@ -107,7 +104,11 @@
             text-decoration: none;
             transition: background-color 0.3s;
             align-items: center;
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
         }
+
 
         .product-card .btn:hover {
             background-color: var(--tan);
@@ -179,11 +180,17 @@
             width: 40px;
             margin: 0 10px;
         }
-        .responsive-img{
-      width:150px;
-      height: 150px;
 
-    }
+        .responsive-img-footer {
+            width: 200px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        @media (max-width: 600px) {
+            .product-card {
+                flex: 1 1 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -220,7 +227,7 @@
             <section id="about" class="section">
                 <p> "Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
                 <p>Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
-                <a href="#" class="btn orange accent-1 black-text">Shop Now</a>
+                <a href="#" class="btn-large orange accent-1 black-text">Shop Now</a>
             </section>
 
             <section id="products" class="section">
@@ -262,27 +269,27 @@
         </div>
         
         
-         <footer class="section">
+        <footer class="section">
             <div class="container">
-              <div class="row">
-                <div class="col l6 s12">
-                  <img src="img/logo.png" alt="" srcset="">
-                  <p>Perfectly Roasted Coffee</p>
+                <div class="row">
+                    <div class="col l6 s12">
+                        <img class="responsive-img-footer" src="img/logo.png" alt="Kahũa Logo">
+                        <p>Perfectly Roasted Coffee</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5>Connect</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col l4 offset-l2 s12">
-                  <h5>Connect</h5>
-                  <ul>
-                    <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
             <div class="footer-copyright grey darken-4">
-              <div class="container center-align">&copy; 2024 Kahũa Coffee</div>
+                <div class="container center-align">&copy; 2024 Kahũa Coffee</div>
             </div>
-          </footer>
+        </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
