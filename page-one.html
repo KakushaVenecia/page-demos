@@ -21,7 +21,13 @@
         }
 
         .background-image {
-            background-image: url('img/bean-file.avif');
+            /* background-image: url('img/bean-file.avif'); */
+            background-color: #D4A373;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='823' height='98.8' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%237F4F24' stroke-width='6.4' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+            /* background-color: #7F4F24;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%233B2F2F' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%237F4F24' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23885527' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23915b2a' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%239a612d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23a4672f' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23ad6d32' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23b67435' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23bf7a38' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23c6803d' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23c88647' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23cb8d50' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23cd935a' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23d09963' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23d29f6d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23d5a676' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23d8ac7f' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23dab289' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23DDB892' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover; */
             background-size: cover;
             background-position: center;
             color: white;
@@ -227,8 +233,8 @@
             
             <section id="about" class="section">
                 <img style="width:15%; height: 30%;" class="center-align" src="img/coffee.png" alt="">
-                <p> "Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
-                <p>Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
+                <p style="color: #3b2f2f; font-weight: bold;"> "Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
+                <p style="color: #3b2f2f; font-weight: bold;">Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
                 <a href="#" class="btn-large orange accent-1 black-text">Shop Now</a>
             </section>
 
@@ -250,6 +256,7 @@
                         <img src="https://source.unsplash.com/400x300/?coffee" alt="Light Roast">
                         <h3>Light Roast</h3>
                         <p>A bright, vibrant roast with a delicate body and fruity notes.</p>
+                        <br>
                         <a href="#" class="btn orange accent-1 black-text">Buy Now</a>
                     </div>
                 </div>
@@ -297,10 +304,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems);
-        });
+        $(document).ready(function(){
+        $('.sidenav').sidenav();
+    });
     </script>
 </body>
 </html>
