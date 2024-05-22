@@ -1,352 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <title>Kahua Demo</title>
-    <style>
-      .box {
-        height: 200px;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-      .row > div {
-        padding: 10px;
-        /* background: #ddd; */
-        border: 1px solid #fff;
-      }
-      .row {
-        margin: 40px auto;
-      }
+  <title>Buy Coffee Grounds</title>
+  <style>
+    :root {
+      --dark-brown: #3b2f2f;
+      --medium-brown: #7f4f24;
+      --light-brown: #ddb892;
+      --tan: #d4a373;
+      --background-grey: #f8f4f0;
+      --accent-color: #c79c60;
+    }
+    *, html{
+        margin: 0!important;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: var(--background-grey);
+      color: var(--dark-brown);
+    }
+    nav {
+      background-color: #ddb892; 
+      padding: 20px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    /* .nav-logo {
+      color:  #3b2f2f;
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 50px;
+      margin-top: 40px;
+      text-transform: uppercase;
+    } */
+    .nav-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-      .col > div {
-        background: lightblue !important;
-        height: 120px;
+    .nav-menu li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .nav-menu li:last-child {
+      margin-right: 0;
+    }
+
+    .nav-menu li a {
+      color:   #3b2f2f;;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 18px;
+      position: relative;
+    }
+
+    .nav-menu li a::before {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #fff;
+      transition: width 0.3s;
+    }
+
+    .nav-menu li a:hover::before {
+      width: 100%;
+    }
+
+    .nav-menu li a i {
+      margin-right: 5px;
+    }
+
+    .nav-menu li a span {
+      display: inline-block;
+      position: relative;
+      top: 4px;
+    }
+
+    /* Coffee Cup Animation */
+    .coffee-cup {
+      display: inline-block;
+      position: relative;
+      animation: coffee-float 4s infinite alternate;
+    }
+
+    @keyframes coffee-float {
+      0% {
+        transform: translateY(0);
       }
-      footer {
-            background: linear-gradient(-45deg, #7f4f24, #3b2f2f, #d4a373);
-            position: absolute;
-            width: 100%;
+      100% {
+        transform: translateY(-5px);
+      }
+    }
+    /* Header with Video */
+    .video-container {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    .header-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: var(--background-grey);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Main Content */
+    main {
+      padding: 1rem;
+    }
+
+    section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+    .col {
+        flex-basis: calc(50% - 1rem); /* Adjusted for the gap */
+    }
+    }
+
+    footer {
+    background-color: var(--dark-brown);
+    color: var(--background-grey);
+    padding: 2rem;
+    text-align: center;
+    margin-top: auto; /* Ensure footer sticks to the bottom */
+    margin-bottom: 0; /* Remove margin at the bottom */
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--medium-brown);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .coffee-variety {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 1rem;
+    }
+
+    .coffee-card {
+      background-color: var(--light-brown);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .coffee-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .coffee-card img {
+      max-width: 40%;
+      height: 50%;
+      border-radius: 4px;
+    }
+
+    .coffee-card h3 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: var(--dark-brown);
+    }
+
+    .coffee-card p {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--accent-color);
+      color: var(--background-grey);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--medium-brown);
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background-color: var(--tan);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonial blockquote {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial cite {
+      font-weight: bold;
+      color: var(--medium-brown);
+    }
+
+    .footer-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-content ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .footer-content a {
+      color: var(--background-grey);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-content a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-content form {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .footer-content input[type="email"] {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+    }
+
+    section {
+        display: flex;
+        text-align: center;
+        margin-bottom: 3rem;
         }
-    </style>
-  </head>
-  <body>
-    <nav class="nav-wrapper indigo">
-      <div class="container">
-        <a href="/index.html" class="brand-logo">Kahua</a>
-        <a href="#" class="sidenav-trigger" data-target="mobile-links">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#">Demo Page 1</a></li>
-          <li><a href="#">Demo Page 2</a></li>
-          <li><a href="#">Demo Page 3</a></li>
-          <li><a href="#">Demo Page 4</a></li>
+
+h2 {
+  font-size: 2rem;
+  color: var(--medium-brown);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  height: 60%;
+    width: 80%;
+    /* background-color: red; */
+}
+
+.col {
+  flex-basis: 100%;
+}
+
+@media (min-width: 768px) {
+  .col {
+    flex-basis: 48%; /* Two columns layout on medium screens */
+  }
+}
+
+    .footer-content button[type="submit"] {
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-color);
+      color: var(--background-grey);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .footer-content button[type="submit"]:hover {
+      background-color: var(--medium-brown);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Video -->
+  <header>
+    <nav>
+        <!-- <div class="nav-logo">Kahũa</div> -->
+        <ul class="nav-menu">
+           <li> <a href="https://kakushavenecia.github.io/page-demos/index.html" class="brand-logo">Kahũa</a> </li>
+          <li><a href="page-one.html"><i class="fas fa-coffee"></i><span>Page 1</span></a></li>
+          <li><a href="page-two.html"><i class="fas fa-coffee"></i><span>Page 2</span></a></li>
+          <li><a href="page-three.html"><i class="fas fa-coffee"></i><span>Page 3</span></a></li>
+          <li><a href="page-four.html"><i class="fas fa-envelope"></i><span>Page 4</span></a></li>
+          <li><a href="page-five.html" class="coffee-cup"><i class="fas fa-coffee"></i><span>Page 5</span></a></li>
         </ul>
-      </div>
-    </nav>
-    <ul class="sidenav" id="mobile-links">
-      <li><a href="#">Demo Page 1</a></li>
-      <li><a href="#">Demo Page 2</a></li>
-      <li><a href="#">Demo Page 3</a></li>
-      <li><a href="#">Demo Page 4</a></li>
-    </ul>
-    <div class="container">
-      <h5 class="center-align">Center alignment</h5>
-      <h5 class="left-align">Left alignment</h5>
-      <h5 class="right-align">Right alignment</h5>
+      </nav>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="img/Heading.mp4" type="video/mp4">
+      </video>
     </div>
+    <div class="header-content">
+      <h1>Freshly Roasted Coffee</h1>
+      <p>Experience the rich aroma and bold flavors of our premium coffee.</p>
+    </div>
+  </header>
 
-    <div class="container grey darken-4 white-text box valign-wrapper">
-      <h5>Vertical alignment</h5>
-    </div>
+  <!-- Main Content -->
+  <main>
+    <section class="section container">
+        <div class="row">
+          <div class="col s12 m6">
+            <br>
+            <h2>About Kahũa</h2>
+            <br>
+            <br>
+            <p class="justify">"Kahũa" is a premium coffee brand that hails from the lush green hills of Thika, Kenya. Known for its exceptional coffee beans, grown on rich volcanic soil, and bathed in plenty of sunshine.</p>
+            <br>
+            <p>Kahũa prides itself on using only the best beans and traditional roasting methods to produce a bold and flavorful cup of coffee. Savor the smooth taste and rich aroma with every sip and treat yourself to a true testament of coffee-making heritage.</p>
+            <br>
+            <a href="#" class="btn">Shop Now</a>
+          </div>
+          <div class="col s12 m6">
+            <img src="img/coffee.png" alt="Coffee Beans" class="responsive-img">
+          </div>
+        </div>
+      </section>
+      <h2>Our Coffee Varieties</h2>
+      <div class="coffee-variety">
+        <div class="coffee-card">
+          <img src="img/coffee.png" alt="Coffee Variety 1">
+          <h3>Light Roast</h3>
+          <p>A rich and full-bodied coffee with notes of caramel and chocolate.</p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+        <div class="coffee-card">
+          <img src="img/coffee.png" alt="Coffee Variety 2">
+          <h3>Medium Roast</h3>
+          <p>A bright and vibrant coffee with a complex flavor profile.</p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+        <div class="coffee-card">
+          <img src="img/coffee.png" alt="Coffee Variety 3">
+          <h3>Dark Roast</h3>
+          <p>A bold and earthy coffee with notes of dark chocolate and spice.</p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </section>
 
-    <div class="container">
-      <p class="truncate">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec sem
-        dictum, consectetur ex vitae, feugiat quam. Sed quis sodales urna. Donec
-        tincidunt faucibus diam a ullamcorper.
-      </p>
-    </div>
+    <section>
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <blockquote>
+          "These coffee grounds are simply amazing! The aroma and flavor are out of this world."
+          <cite>- John Doe</cite>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          "I've tried many different coffee brands, but none compare to the quality and freshness of these grounds."
+          <cite>- Jane Smith</cite>
+        </blockquote>
+      </div>
+    </section>
+  </main>
 
-    <div class="container">
-      <h4>Buttons</h4>
-      <a href="#" class="btn lighten-3 waves-effect waves-dark black-text"
-        >Normal button</a
-      >
-      <a href="#" class="btn-small">Small button</a>
-      <a href="#" class="btn-large">Large button</a>
-      <a href="#" class="btn indigo waves-effect waves-light">Indigo button</a>
-      <a href="#" class="btn disabled">Disabled button</a>
-      <h4>Floating button</h4>
-      <a href="#" class="btn-floating pulse orange lighten-3"></a>
-      <h4>Other elements</h4>
-      <div class="btn">I am a div tag</div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h3>Contact Us</h3>
+      <p>Email: info@coffeeshop.com</p>
+      <p>Phone: 123-456-7890</p>
     </div>
-    <div class="container">
-      <h4>Icons</h4>
-      <i class="material-icons red-text">error</i>
-      <i class="material-icons yellow-text text-darken-2">warning</i>
-      <i class="material-icons grey-text">cloud</i>
-      <i class="material-icons light-blue-text">folder</i>
-      <h4>Icons on Buttons</h4>
-      <a href="#" class="btn indigo">
-        <span>Send</span>
-        <i class="material-icons right">send</i>
-      </a>
-      <a href="#" class="btn pink waves-effect waves-light">
-        <span>Email</span>
-        <i class="material-icons left">email</i>
-      </a>
-      <h4>Icons on Floating Buttons</h4>
-      <a href="#" class="btn-floating light-blue">
-        <i class="material-icons">add</i>
-      </a>
-      <a href="#" class="btn-floating red pulse">
-        <i class="material-icons">remove</i>
-      </a>
-      <a href="#" class="btn-floating orange pulse">
-        <i class="material-icons">edit</i>
-      </a>
-    </div>
-
-    <div class="container">
-      <h4>Grids</h4>
-      <div class="row">
-        <div class="col s3">content</div>
-        <div class="col s3">content</div>
-        <div class="col s3">content</div>
-        <div class="col s3">content</div>
-      </div>
-      <div class="row">
-        <div class="col s6 m3">content</div>
-        <div class="col s6 m3">content</div>
-        <div class="col s6 m3">content</div>
-        <div class="col s6 m3">content</div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-        <div class="col s12 m6 l4">content</div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-        <div class="col s12 m6 l4 xl2">content</div>
-      </div>
-      <div class="row">
-        <div class="col s12 m8">content</div>
-        <div class="col s12 m4">content</div>
-        <div class="col s12 m4">content</div>
-        <div class="col s12 m8">content</div>
-      </div>
-    </div>
-    <div class="container">
-      <h2>Modals</h2>
-      <a class="btn orange modal-trigger" href="#terms">Terms & Conditions</a>
-      <div id="terms" class="modal">
-        <div class="modal-content">
-          <h4>Terms & Conditions</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae finibus mi, egestas dignissim metus. Fusce tempus elementum metus. Donec eu nibh fringilla, dignissim arcu eu, ultrices ante. Cras consectetur risus id mi condimentum aliquam.</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close btn orange">Agree</a>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <h4>Shadows & Depth</h4>
-      <div class="row">
-        <div class="col s2">
-          <div></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-1"></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-2"></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-3"></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-4"></div>
-        </div>
-        <div class="col s2">
-          <div class="z-depth-5"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <h2>Collections</h2>
-      <ul class="collection with-header">
-        <li class="collection-header"><h4>Customers</h4></li>
-        <li class="collection-item avatar">
-          <i class="material-icons circle blue">person</i>
-          <span class="title">Ryu</span>
-          <p class="grey-text">black-belt</p>
-          <a href="" class="secondary-content">
-            <i class="material-icons light-blue-text">email</i>
-          </a>
-        </li>
-        <li class="collection-item avatar">
-          <i class="material-icons circle blue">person</i>
-          <span class="title">Yoshi</span>
-          <p class="grey-text">orange-belt</p>
-          <a href="" class="secondary-content">
-            <i class="material-icons light-blue-text">email</i>
-          </a>
-        </li>
-        <li class="collection-item avatar">
-          <i class="material-icons circle blue">person</i>
-          <span class="title">Crystal</span>
-          <p class="grey-text">brown-belt</p>
-          <a href="" class="secondary-content">
-            <i class="material-icons light-blue-text">email</i>
-          </a>
-        </li>
-        <li class="collection-item">Mario</li>
-        <li class="collection-item">Luigi</li>
-        <li class="collection-item">Bowser</li>
+    <div class="footer-content">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
       </ul>
     </div>
-    <div class="container">
-        <h2>Cards</h2>
-        <div class="row">
-          <div class="col s12 l6">
-            <div class="card">
-              <div class="card-image">
-                <img src="img/curry.jpg" alt="" />
-                <a href="" class="halfway-fab btn-floating pink pulse">
-                  <i class="material-icons">favorite</i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title">Mango & Chickpea Curry</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                  quis aliquam orci. Orci varius natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus.
-                </p>
-              </div>
-              <div class="card-action">
-                <a href="">More details</a>
-                <a href="">View Ingredients</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 l6">
-            <div class="card">
-              <div class="card-image">
-                <img src="img/pasta.jpg" alt="" />
-                <a href="" class="halfway-fab btn-floating pink pulse">
-                  <i class="material-icons">favorite</i>
-                </a>
-              </div>
-              <div class="card-content">
-                <span class="card-title">Rainbow Pasta Salad</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                  quis aliquam orci. Orci varius natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus.
-                </p>
-              </div>
-              <div class="card-action">
-                <a href="">More details</a>
-                <a href="">View Ingredients</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="footer-content">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form>
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
-     <!-- Footer Section -->
-<footer class="page-footer">
-  <div class="container">
-      <div class="row">
-          <!-- Footer Strip -->
-          <div class="col s12 center-align">
-              <img class="responsive-img" src="img/logo.png" alt="Awards">
-          </div>
-      </div>
-      <div class="divider"></div>
-      <div class="row">
-          <!-- Call to Action -->
-          <div class="col s12 center-align">
-              <h5 class="black-text">Get In Touch</h5>
-              <ul class="list-inline">
-                  <li><a href="#" class="black-text">Become a client</a></li>
-                  <li><a href="#" class="black-text">Join our team</a></li>
-              </ul>
-          </div>
-      </div>
-      <div class="divider"></div>
-      <div class="row">
-          <!-- Social Icons -->
-          <div class="col s12 l5 center-align">
-              <ul class="social-icons">
-                  <li><a target='_blank' href="#" class="black-text"><i class="fa fa-facebook"></i></a></li>
-                  <li><a target='_blank' href="#" class="black-text"><i class="fa fa-instagram"></i></a></li>
-                  <li><a target='_blank' href="#" class="black-text"><i class="fa fa-twitter"></i></a></li>
-                  <li><a target='_blank' href="#" class="black-text"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-          </div>
-          <!-- Footer Menu -->
-          <div class="col s12 l7 right-align">
-              <ul class="list-inline">
-                  <li><a href="https://creative.co.ke/work/" class="black-text">Work</a></li>
-                  <li><a href="https://creative.co.ke/services" class="black-text">Services</a></li>
-                  <li><a href="https://creative.co.ke/talent" class="black-text">Talent</a></li>
-                  <li><a href="https://creative.co.ke/get-in-touch/" class="black-text">Contact</a></li>
-                  <li><a href="https://creative.co.ke/press-release/" class="black-text">Press Release</a></li>
-              </ul>
-          </div>
-      </div>
-      <div class="divider"></div>
-      <!-- Copyright -->
-      <div class="row">
-          <div class="col s12 center-align">
-              <p class="black-text">
-                  Copyright © Kahũa 2024. All rights reserved. For company information and other 
-                  legal bits, see our <a href="#" class="orange-text text-lighten-3">legal page</a>. We’re using cookies, hope that’s cool. Here’s our 
-                  <a href="#" class="orange-text text-lighten-3">Privacy Policy</a>.
-              </p>
-          </div>
-      </div>
-  </div>
-</footer>
+  </footer>
 
-    
+  <!-- JavaScript -->
+  <script>
+    const testimonials = document.querySelectorAll('.testimonial');
+    let currentIndex = 0;
 
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".sidenav").sidenav();
+    function showTestimonial() {
+      testimonials.forEach((testimonial, index) => {
+        if (index === currentIndex) {
+          testimonial.style.display = 'block';
+        } else {
+          testimonial.style.display = 'none';
+        }
       });
-    </script>
-     <script>
-        $(document).ready(function(){
-          $('.modal').modal();
-        });
-      </script>
-  </body>
+      currentIndex = (currentIndex + 1) % testimonials.length;
+    }
+
+    setInterval(showTestimonial, 5000);
+  </script>
+</body>
 </html>
